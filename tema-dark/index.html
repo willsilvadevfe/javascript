@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/button.css">
     <link rel="stylesheet" href="estilos/style.css">
-    <title>Dark theme</title>
+    <title>Rockstar Games</title>
 </head>
 <body>
-    <div class="header">
+    <div class="header" id="header">
         <img src="img/rockstar.png" alt="logo">
         <div class="link">
-            <a href="#">Contato ></a>
-            <a href="#">Lançamentos ></a>
-            <a href="#">Preços ></a>
-            <a href="#">Suporte ></a>
+            <a href="#">Contato</a>
+            <a href="#">Lançamentos</a>
+            <a href="#">Preços</a>
+            <a href="#">Suporte</a>
         </div>
         <div>
             <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" onclick="darktheme()">
                 <span class="slider"></span>
             </label>
         </div>
@@ -38,5 +38,12 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function darktheme(){
+            var header = window.document.getElementById('header')
+            header.style.backgroundColor = 'white'
+        }
+    </script>
 </body>
 </html>
