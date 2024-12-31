@@ -8,20 +8,24 @@ body, html{
     margin: 0px;
     padding: 0px;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    background-color: black;
 }
 
 body.light{
-    background-color: rgb(17, 85, 153);
+    background-color: #e24a4ab6;
+    transition: .3s linear;
 }
+
+
 .header{
     background-color: #313130;
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 70px;
-    
-    
 }
+
+
 
 .header > img{
     width: 60px;
@@ -49,8 +53,8 @@ body.light{
 .container{
     display: flex;
     justify-content: space-between;
-    height: 90.4vh;
-    background-color: rgb(0, 0, 0);
+    height: 90.9vh;
+    background-color: transparent;
     position: relative;
 }
 
@@ -90,12 +94,14 @@ body.light{
     bottom: 0px;
     right: 2em;
     width: 480px;
+    filter: drop-shadow(10px -2px 0px rgb(255, 255, 255));
 }
 
 .right-side >.person2 {
     position: absolute;
     width: 300px;
     right: 20em;
+    filter: drop-shadow(2px -8px 0px rgb(255, 255, 255));
     
 }
 

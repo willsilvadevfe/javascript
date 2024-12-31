@@ -8,7 +8,7 @@
     <title>Rockstar Games</title>
 </head>
 <body>
-    <div class="header" id="header">
+    <div class="header" id="header" onclick="cab()">
         <img src="img/rockstar.png" alt="logo">
         <div class="link">
             <a href="#">Contato</a>
@@ -25,7 +25,7 @@
         </div>
         </ul>
     </div>
-    <div class="container">
+    <div class="container" id="container">
         <div class="left-side">
             <h1>Grand Theft Auto <span class="title">trilogia</span></h1>
             <p>Três cidades icônicas, três histórias épicas. Jogue a clássica trilogia original de Grand Theft Auto que definiu o gênero – Grand Theft Auto III, Grand Theft Auto: Vice City e Grand Theft Auto: San Andreas – atualizada para a nova geração com diversos aprimoramentos, incluindo melhorias incríveis na iluminação e no ambiente, texturas de alta resolução, distâncias maiores de renderização, controles e mira no estilo de Grand Theft Auto V e muito mais, dando vida a esses mundos aclamados com um nível de detalhe inédito. Dinheiro é o que manda nesta cidade. Resolva os seus problemas financeiros e consiga o que quiser em Los Santos e Blaine County com a compra de pacotes de dinheiro para o Grand Theft Auto Online.</p>
@@ -39,10 +39,12 @@
         </div>
     </div>
     <script>
+        
+        
         var chk = document.getElementById('chk')
         document.getElementById('chk').onclick = () =>{
-    document.body.classList.toggle('light')
-}
+        document.body.classList.toggle('light')
+        }
     </script>
 </body>
 </html>
