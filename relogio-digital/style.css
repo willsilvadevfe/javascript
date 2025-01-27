@@ -16,6 +16,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 
     background: rgb(224,145,23);
     background: linear-gradient(90deg, rgb(160, 102, 14) 0%, rgba(246,126,5,1) 35%, rgba(238, 174, 47, 0.9) 100%);
@@ -68,4 +69,7 @@ body{
     justify-content: center;
 }
 
-
+footer{
+    font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
