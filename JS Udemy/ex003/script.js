@@ -16,3 +16,10 @@ window.alert('O valor da variavel dividido por 4 é: ' + num) //Mostra na tela o
 window.alert('O valor final da variavel é: ' + num) //Mostra na tela o valor final da variavel
 
 
+/*
+//Exercicio escrever BaNaNa (usando NotANumber)
+let text = 'Ba'
+let nan = parseFloat("")
+console.log(text + nan + 'a')*/
+
+
