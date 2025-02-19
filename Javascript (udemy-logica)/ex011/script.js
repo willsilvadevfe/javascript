@@ -1,0 +1,1 @@
+/*Pedir para o usuário digitar um número e mostrar a tabuada de 1 até 1000, colocando uma linha divisória ou uma quebra de linha sempre que mudar de dezena.*/
