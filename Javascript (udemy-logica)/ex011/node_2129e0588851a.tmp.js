@@ -1,7 +1,7 @@
 /*Pedir para o usuário digitar um número e mostrar a tabuada de 1 até 1000, colocando uma linha divisória ou uma quebra de linha sempre que mudar de dezena.*/
 
 //let num = parseInt(prompt('Digite um número:'))
-let num = 6
+let num = 7
 //let contador = 0
 
 let now = new Date()
@@ -11,7 +11,6 @@ let sec = now.getSeconds()
 let date = now.getUTCDate()
 let year = now.getFullYear()
 let ms = now.getUTCMonth()
-
 if(num < 0){
     console.log('Digite apenas números acima de 0')
 }else if(isNaN(num)){
@@ -27,14 +26,15 @@ if(num < 0){
 
     console.log(`>> Tabuada gerada conforme número digitado pelo usuário: ${num}`)
     console.log(`>> Data e hora em que tabuada foi gerada: ${date}/${ms}/${year} - ${hour}:${min}:${sec}`)
+    }
         console.log('')
-    for(let contador = 0;contador <= 50;contador++){
+    for(let contador = 0;contador <= 30;contador++){
         let res = num * contador
         console.log(`${num} X ${contador} = ${res}`)
-        if(contador == 10){ console.log('')}
-        if(contador == 20){ console.log('')}
-        if(contador == 30){ console.log('')}
-        if(contador == 40){ console.log('')}
-        if(contador == 50){ console.log('')}
+        let brokeLine = 0
+        while(brokeLine = 10){
+            console.log('')
+            brokeLine++
+            
+        }
     }
-}
