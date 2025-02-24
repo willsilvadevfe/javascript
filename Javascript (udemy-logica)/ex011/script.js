@@ -1,8 +1,7 @@
 /*Pedir para o usuário digitar um número e mostrar a tabuada de 1 até 1000, colocando uma linha divisória ou uma quebra de linha sempre que mudar de dezena.*/
 
 //let num = parseInt(prompt('Digite um número:'))
-let num = 6
-//let contador = 0
+let num = 9
 
 let now = new Date()
 let hour = now.getHours()
@@ -28,13 +27,9 @@ if(num < 0){
     console.log(`>> Tabuada gerada conforme número digitado pelo usuário: ${num}`)
     console.log(`>> Data e hora em que tabuada foi gerada: ${date}/${ms}/${year} - ${hour}:${min}:${sec}`)
         console.log('')
-    for(let contador = 0;contador <= 50;contador++){
+    for(let contador = 1;contador <= 100;contador++){
         let res = num * contador
         console.log(`${num} X ${contador} = ${res}`)
-        if(contador == 10){ console.log('')}
-        if(contador == 20){ console.log('')}
-        if(contador == 30){ console.log('')}
-        if(contador == 40){ console.log('')}
-        if(contador == 50){ console.log('')}
+        if(contador % 10 === 0){ console.log('')} 
     }
 }
