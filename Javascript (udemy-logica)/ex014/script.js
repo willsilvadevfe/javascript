@@ -1,6 +1,7 @@
 /* Jogue dois dados quantas vezes forem necessárias até que a soma dos pontos dos dados seja par por 10 vezes. Não contabilize as vezes em que os dados forem iguais. Quantas vezes os dados foram jogados ? */
 
 let vezesDadosJogados = 0
+let subtracaoDados = 10
 let vezesDadosDivisiveisPorDez = 0
 
 while(true){
@@ -15,10 +16,10 @@ while(true){
 
     if(dado1 === dado2){
         console.log(`Dados iguais detectados, desconsiderando adição a variável.`)
-        vezesDadosJogados--
+        subtracaoDados--
     }
 
-    if(vezesDadosDivisiveisPorDez >= 10){
+    if(subtracaoDados == 0){
         break
     }
 }
