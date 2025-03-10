@@ -1,0 +1,1 @@
+/* Dado um Array qualquer, mostre em um alert ou terminal um boolean indicando se encontrou um dos seguintes valores do Array: null, undefined ou NaN */
