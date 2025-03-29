@@ -9,16 +9,19 @@
     <title>Gerador de tabuada</title>
 </head>
 <body>
-        <div class="header-box">
-            <i id="icon-header" class="large material-icons">functions</i>
-            <span id="text-header">GERADOR DE TABUADA</span>
-        </div>
+    <div class="header-box">
+        <i id="icon-header" class="large material-icons">functions</i>
+        <span id="text-header">Gerador de tabuada</span>
+    </div>
     <div class="tab">
         <p>Digite um número abaixo, em seguida clique no botão para gerar a tabuada.</p>
         <input type="number" value="" id="numberbox">
     </div>
-    <div class="btnclass"><input type="button" name="btn" value="Gerar tabuada" id="btn" onclick="clicar()"></div>
+        <div class="btnclass"><input type="button" name="btn"   value="Gerar tabuada" id="btn" onclick="clicar()">
+        <input type="button" value="Limpar" id="clean"  onclick="clean()">
+    </div>
     <div id="tab"></div>
+    <footer>Gerador de tabuadas desenvolvido por <strong>Willian Silva</strong>, exercicio do curso de lógica de programação e estrutura de dados com Javascript.</footer>
     <script src="script.js"></script>
 </body>
 </html>

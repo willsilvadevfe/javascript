@@ -13,13 +13,16 @@ function clicar(){
     }else{
         let contador = 0
         while(contador <= 10){
-            tab.innerHTML += `${boxValue.value} X ${contador} = <strong>${boxValue.value * contador}</strong> </br>`
+            tab.innerHTML += `${boxValue.value} X ${contador} = <strong>${boxValue.value * contador}</strong> </br>`          
             contador++
-          
         }
-        
+
     }
+}
 
-    
+function clean(){
+    const tab = document.getElementById('tab')
+    const clear = document.getElementById('clean')
 
+    tab.innerHTML = ""
 }
