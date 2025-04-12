@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dropdown.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <p><a href="firstpage.html">dropdown</a></p>
+        <select class="dropdown" id="myDropdown" onchange="dropDown()">
+            <option class="values" value="">Menu</option>
+            <option class="values" value="apple">Dúvidas</option>
+            <option class="values" value="banana">Conteúdo</option>
+            <option class="values" value="cherry">Contato</option>
+        </select>
+        </div>
+    <h2>Gerenciador para cálculo de blocos padrões</h2><br>
+    <p class="text-info">Digite o valor do comprimento total (2RC) impresso no cartão do dispositivo.</p>
+    <div class="inp-btn">
+        <input type="number" id="number">
+        <button id="calc" onclick="calcular()">Calcular</button>
+    </div>
+    <div id="res"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
