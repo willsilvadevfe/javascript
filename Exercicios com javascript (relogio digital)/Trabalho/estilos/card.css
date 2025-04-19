@@ -1,0 +1,35 @@
+
+.card {
+    display: flex; 
+    flex-direction: column; 
+    background-image: url(../img/profile.png);
+    background-size: 200px;
+    border-radius: 20px  20px 20px 20px;
+    width: 340px;
+    height: 470px;
+    box-shadow: 6px 6px 29px 5px rgba(0,0,0,0.2);
+    overflow: hidden; 
+    border-color: #000000;
+    
+}
+.card-body{
+    background-color: #8FAADF;
+    flex-grow: 1;
+    padding: 24px; 
+}
+
+.card-title{
+    color: #000000;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0px; 
+    padding: 0px; 
+     
+}
+.card-text{
+    line-height: 1.4;
+    margin: 10px 0px 0px 0px; 
+    font-size: 14px;
+    color: #000000;
+    
+}
