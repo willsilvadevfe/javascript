@@ -1,87 +1,155 @@
 @media only screen and (max-width: 600px){
-    .container{
-        width: 100vw;
-        height: 100vh;
-    }
     .header{
-        height: 8vh;
         width: 90%;
-        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header > .logo > p{
+        font-size: 1.2rem;
+        padding: 0px 0px 10px 0px;
+    }
+
+    .header > .info-header > a{
+        font-size: 1.2rem;
+        padding: 0px 15px;
+    }
+
+    .main > .text-main > h1{
+        font-size: 2.7rem;
+        line-height: 80%;
+        padding: 20px 0px 20px 40px;
     }
 
     .main{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-    
-    .logo > p{
-        font-size: 1.1rem;
-        text-align: center;
+        align-items: flex-start;
+        flex-direction: column-reverse;
+        
     }
 
-    .info-header > a{
-        padding: 0px 10px;
+    .main > .text-main > p{
         font-size: 1rem;
-
+        padding: 0px 0px 20px 40px;
+        max-width: 90%;
     }
 
-    .text-main > h1{
+    .main > .text-main > .btn{
+       margin: auto;
+       min-width: 50%;
+    }
+
+    .animation{
         margin: auto;
-        flex-wrap: wrap;
-        max-width: 90%;
-        font-size: 3rem;
-        line-height: 45px;
+        width: 70%;
     }
-    
-    .text-main > p{
-        flex-wrap: wrap;
-        max-width: 90%;
+
+    .mobilesvg{
+        width: none;
+    }
+
+    br{
+        display: none;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+    .header{
+        width: 90%;
+    }
+
+    .header > .logo > p{
+        font-size: 1.3rem;
+    }
+
+    .header > .info-header > a{
         font-size: 1.2rem;
-    }
-    
-    .animationsvg{
-        width: 200px;
+        padding: 0px 10px;
     }
 
+    .main > .text-main > h1{
+        font-size: 3.4rem;
+        line-height: 80%;
+        padding: 10px 0px 20px 60px;
+    }
 
+    .main{
+        align-items: flex-start;
+        flex-direction: column-reverse;
+    }
 
+    .main > .text-main > p{
+        font-size: 1.2rem;
+        padding: 0px 0px 40px 60px;
+        max-width: 90%;
+    }
 
+    .main > .text-main > .btn{
+       margin: auto;
+    }
+
+    .animation{
+        margin: auto;
+        width: 45%;
+    }
+
+    .mobilesvg{
+        width: none;
+    }
+
+    br{
+        display: none;
+    }
 }
 
-
-
-
-
-
-
-
-
-@media only screen and (min-width: 900px) {
-    .text-main > h1{
-        margin-left: 40px;
-        flex: auto;
-    }
-    
-    .text-main > p{
-        margin-left: 40px;
-        flex: auto;
-    }
-    
-    .btn{
-        margin-left: 40px;
-        margin-top: 40px;
-        flex: auto;
+@media (min-width: 769px) and (max-width: 1024px) { 
+    .header{
+        width: 90%;
     }
 
-    .img{
-        margin-right: 20px;
-        flex: auto;
+    .header > .logo > p{
+        font-size: 1.3rem;
     }
 
+    .header > .info-header > a{
+        font-size: 1.2rem;
+        padding: 0px 20px;
+    }
 
+    .main > .text-main > h1{
+        font-size: 3rem;
+        line-height: 80%;
+        padding: 10px 0px 20px 40px;
+        min-width: 97%;
+    }
+
+    .main{
+        align-items: center;
+        flex-direction: row-reverse;
+    }
+
+    .main > .text-main > p{
+        font-size: 1.1rem;
+        padding: 0px 0px 0px 40px;
+        min-width: 70%;
+    }
+
+    .main > .text-main > .btn{
+       margin: auto;
+       min-width: 180px;
+    }
+
+    .animation{
+        min-width: 50%;
+        padding: 0px 0px 0px 50px;
+    }
+
+    .mobilesvg{
+        width: none;
+    }
+
+    br{
+        
+    }
 
 }
-
 

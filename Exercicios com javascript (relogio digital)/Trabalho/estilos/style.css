@@ -9,20 +9,24 @@
     box-sizing: border-box;
 }
 
-body{
+.container{
     width: 100vw;
     height: 100vh;
+}
+
+body{
     background-color: #202125;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
 .header{
     display: flex;
-    justify-content: space-between;
     align-items: flex-end;
+    justify-content: space-between;
+    
+    width: 90%;
+    padding: 20px;
     margin: auto;
-    height: 8vh;
-    width: 80%;
 }
 
 span{
@@ -30,30 +34,22 @@ span{
 }
 
 .info-header > a{
-    padding: 0px 40px;
-    text-decoration: none;
-    font-size: 1.2rem;
     color: #E4E5E9;
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 0px 40px;
 }
 
 .info-header > a:hover{
     color: #8FAADF;
-    transition: .1s;
-    
+    transition: .2s;
 }
 
 .logo > p{
+    color: #E4E5E9;
     font-size: 1.3rem;
     letter-spacing: -1px;
-    color: #E4E5E9;
 }
-
-.line{
-    width: 50vw;
-    height: 2px;
-    background-color: #E4E5E9;
-}
-
 
 .main{
     display: flex;
@@ -63,39 +59,37 @@ span{
 
 .text-main > h1{
     color: #E4E5E9;
-    width: 600px;
     font-size: 4rem;
     letter-spacing: -2px;
+    max-width: 600px;
     line-height: 60px;
 }
 
 .text-main > p{
     color: #959597;
-    width: 500px;
     font-size: 1.1rem;
+    max-width: 550px;
 }
 
 .btn > button{
-    background-color: transparent;
-    border: none;
     color: #E4E5E9;
     font-size: 1.2rem;
     font-weight: 500;
+    background-color: transparent;
+    border: none;
     cursor: pointer;
 }
 .btn {
     border: 2px solid #8FAADF;
-    border-radius: 4px;
-    width: 170px;
+    border-radius: 6px;
+    width: 28%;
     padding: 10px;
     text-align: center;
-    
-
    }
    
 
 .animation{
-    width: 500px;
+    min-width: 40%;
 }
 
 .mobilesvg{
