@@ -19,36 +19,29 @@ body{
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
-.header{
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    
-    width: 90%;
-    padding: 20px;
-    margin: auto;
-}
-
 span{
     color: #8FAADF;
 }
 
-.info-header > a{
-    color: #E4E5E9;
-    font-size: 1.2rem;
-    text-decoration: none;
-    padding: 0px 40px;
+.header{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    flex-direction: row;
+    max-width: 48%;
+    padding-top: 20px;
 }
 
-.info-header > a:hover{
+.header > .nav > a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #E4E5E9;
+    
+}
+
+.nav > a:hover{
     color: #8FAADF;
     transition: .2s;
-}
-
-.logo > p{
-    color: #E4E5E9;
-    font-size: 1.3rem;
-    letter-spacing: -1px;
 }
 
 .main{
@@ -73,6 +66,12 @@ span{
     font-size: 1.1rem;
     width: 38rem;
 }
+
+.only-mobile{
+    display: none;
+}
+
+
 
 
 

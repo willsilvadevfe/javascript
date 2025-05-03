@@ -3,15 +3,9 @@
     overflow-x: hidden;
    }
 
-    .header > .logo > p{
-        font-size: 1.2rem;
-        padding: 0px 0px 0px 0px;
-    }
-
-    .header > .info-header > a{
-        font-size: 1.2rem;
-        padding: 0px 10px;
-    }
+   .header{
+    min-width: 100%;
+   }
 
     .main{
         flex-direction: column-reverse;
@@ -21,6 +15,7 @@
     .card{
         margin: 20px 0px;
     }
+
     .text-about{
         display: flex;
         flex-direction: column;
@@ -29,19 +24,23 @@
     }
 
     .main > .text-about > h1{
-        font-size: 2.7rem;
+        font-size: 2.2rem;
         width: 90%;
         padding: 30px 0px 0px 30px;
     }
 
     .main > .text-about > p{
-      font-size: 1rem;
+      font-size: 0.98rem;
       width: 90%;
       padding: 10px 0px 10px 30px;
     }
 
     hr{
       display: none;
+    }
+
+    .text-about > .only-mobile{
+        display: block;
     }
 
 }

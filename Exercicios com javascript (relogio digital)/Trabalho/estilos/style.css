@@ -19,77 +19,113 @@ body{
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
-.header{
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    
-    width: 90%;
-    padding: 20px;
-    margin: auto;
-}
-
 span{
     color: #8FAADF;
 }
 
-.info-header > a{
-    color: #E4E5E9;
-    font-size: 1.2rem;
-    text-decoration: none;
-    padding: 0px 40px;
+.header{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    flex-direction: row;
+    max-width: 48%;
+    padding-top: 20px;
 }
 
-.info-header > a:hover{
+
+.header > .nav > a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #E4E5E9;
+    
+    
+}
+
+.nav > a:hover{
     color: #8FAADF;
     transition: .2s;
 }
 
-.logo > p{
-    color: #E4E5E9;
-    font-size: 1.3rem;
-    letter-spacing: -1px;
-}
+
 
 .main{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    padding-top: 5rem;
 }
 
 .text-main > h1{
     color: #E4E5E9;
     font-size: 4rem;
     letter-spacing: -2px;
-    max-width: 600px;
+    max-width: 640px;
     line-height: 60px;
 }
 
 .text-main > p{
     color: #959597;
     font-size: 1.1rem;
-    max-width: 550px;
+    max-width: 600px;
+    padding: 10px 0px 50px 0px;
 }
 
-.btn > button{
-    color: #E4E5E9;
-    font-size: 1.2rem;
+/* From Uiverse.io by adamgiebl */ 
+.cssbuttons-io-button {
+    background: #8FAADF;
+    color: #202125;
+    padding: 0.35em;
+    padding-left: 1.2em;
+    font-size: 17px;
     font-weight: 500;
-    background-color: transparent;
+    border-radius: 0.9em;
     border: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 3.3em;
     cursor: pointer;
-}
-.btn {
-    border: 2px solid #8FAADF;
-    border-radius: 6px;
-    width: 28%;
-    padding: 10px;
-    text-align: center;
-   }
+  }
+  
+  .cssbuttons-io-button .icon {
+    background: white;
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    right: 0.3em;
+    transition: all 0.3s;
+  }
+  
+  .cssbuttons-io-button:hover .icon {
+    width: calc(100% - 0.6em);
+  }
+  
+  .cssbuttons-io-button .icon svg {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: #202125;
+  }
+  
+  .cssbuttons-io-button:hover .icon svg {
+    transform: translateX(0.1em);
+  }
+  
+  .cssbuttons-io-button:active .icon {
+    transform: scale(0.95);
+  }
+  
    
 
 .animation{
-    min-width: 40%;
+    min-width: 32%;
 }
 
 .mobilesvg{
