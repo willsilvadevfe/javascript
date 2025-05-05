@@ -1,4 +1,8 @@
 @media only screen and (max-width: 600px){
+    .container{
+        overflow-x: hidden;
+    }
+    
     .header{
         min-width: 100%;
     }
@@ -6,30 +10,32 @@
     .main > .text-main > h1{
         font-size: 2.7rem;
         line-height: 80%;
-        padding: 25px 0px 25px 40px;
+        padding: 25px 0px 25px 0px;
+        max-width: 85%;
+        margin: auto;
     }
 
     .main{
         align-items: flex-start;
         flex-direction: column-reverse;
-        padding-top: 20px;
-        
+        padding-top: 10px;
     }
 
     .main > .text-main > p{
         font-size: 1rem;
-        padding: 5px 0px 40px 40px;
-        max-width: 95%;
+        padding: 0px 0px 25px 0px;
+        max-width: 85%;
+        margin: auto;
     }
 
     .cssbuttons-io-button{
        margin: auto;
-       min-width: 50%;
+       min-width: 25%;
     }
 
     .animation{
         margin: auto;
-        width: 70%;
+        width: 65%;
     }
 
     .mobilesvg{
@@ -41,95 +47,44 @@
     }
 }
 
-@media (min-width: 601px) and (max-width: 768px) {
+@media (min-width: 601px) and (max-width: 768px){
+    .container{
+        overflow-x: hidden;
+    }
+
     .header{
-        width: 90%;
-    }
-
-    .header > .logo > p{
-        font-size: 1.3rem;
-    }
-
-    .header > .info-header > a{
-        font-size: 1.2rem;
-        padding: 0px 10px;
-    }
-
-    .main > .text-main > h1{
-        font-size: 3.4rem;
-        line-height: 80%;
-        padding: 10px 0px 20px 60px;
+        min-width: 100%;
     }
 
     .main{
         align-items: flex-start;
         flex-direction: column-reverse;
-    }
-
-    .main > .text-main > p{
-        font-size: 1.2rem;
-        padding: 0px 0px 40px 60px;
-        max-width: 90%;
-    }
-
-    .main > .text-main > .btn{
-       margin: auto;
-    }
-
-    .animation{
-        margin: auto;
-        width: 45%;
-    }
-
-    .mobilesvg{
-        width: none;
-    }
-
-    br{
-        display: none;
-    }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) { 
-    .header{
-        width: 90%;
-    }
-
-    .header > .logo > p{
-        font-size: 1.3rem;
-    }
-
-    .header > .info-header > a{
-        font-size: 1.2rem;
-        padding: 0px 20px;
+        padding-top: 10px;
     }
 
     .main > .text-main > h1{
         font-size: 3rem;
         line-height: 80%;
-        padding: 10px 0px 20px 40px;
-        min-width: 97%;
+        padding: 25px 0px 25px 0px;
+        max-width: 85%;
+        margin: auto;
     }
-
-    .main{
-        align-items: center;
-        flex-direction: row-reverse;
-    }
-
+    
     .main > .text-main > p{
-        font-size: 1.1rem;
-        padding: 0px 0px 0px 40px;
-        min-width: 70%;
+        font-size: 1rem;
+        padding: 0px 0px 40px 0px;
+        max-width: 85%;
+        margin: auto;
     }
-
-    .main > .text-main > .btn{
-       margin: auto;
-       min-width: 180px;
-    }
-
+    
+    .cssbuttons-io-button{
+        margin: auto;
+        min-width: 25%;
+     }
+ 
     .animation{
-        min-width: 50%;
-        padding: 0px 0px 0px 50px;
+        margin: auto;
+        width: 48%;
     }
 
     .mobilesvg{
@@ -137,8 +92,163 @@
     }
 
     br{
+        display: none;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 960px) { 
+    .container{
+        overflow-x: hidden;
+    }
+
+    .header{
+        min-width: 100%;
+    }
+
+    .main{
+        align-items: flex-start;
+        flex-direction: column-reverse;
+        padding-top: 10px;
+    }
+
+    .main > .text-main > h1{
+        font-size: 3.5rem;
+        line-height: 80%;
+        padding: 15px 0px 25px 0px;
+        max-width: 85%;
+        margin: auto;
+    }
+    
+    .main > .text-main > p{
+        font-size: 1rem;
+        padding: 0px 0px 20px 0px;
+        max-width: 85%;
+        margin: auto;
+    }
+    
+    .cssbuttons-io-button{
+        margin: auto;
+        min-width: 25%;
+     }
+ 
+    .animation{
+        margin: auto;
+        width: 40%;
+    }
+
+    .mobilesvg{
+        width: none;
+    }
+
+    br{
+        display: none;
+    }
+}
+
+@media (min-width: 961px) and (max-width: 1024px) {
+    .container{
+        position: relative;
+        overflow-x: hidden;
+    }
+
+    .header{
+        max-width: 100%;
+    }
+
+    .main{
+        align-items: flex-start;
+        flex-direction: row;
+        padding-top: 50px;
+    }
+
+    .main > .text-main > h1{
+        font-size: 3.2rem;
+        line-height: 80%;
+        max-width: 90%;
+        padding: 80px 0px 20px 30px;
+        
+    }
+    
+    .main > .text-main > p{
+        font-size: 1.1rem;
+        padding: 0px;
+        max-width: 90%;
+        padding: 20px 0px 20px 30px;
+    }
+    
+    .cssbuttons-io-button{
+        min-width: 25%;
+        position: absolute;
+        bottom: 10%;
+        left: 36%;
+     }
+ 
+    .animation{
+        min-width: 45%;
+    }
+
+    .mobilesvg{
+        width: none;
+    }
+
+    br{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1200px){
+    .container{
+        overflow-x: hidden;
+        width: 100%;
         
     }
 
+    .header{
+        min-width: 100%;
+    }
+
+    .main{
+        justify-content: space-between;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        flex-direction: row;
+        padding-top: 10px;
+        min-width: 100%;
+    }
+
+    .main > .text-main > h1{
+        font-size: 3.7rem;
+        line-height: 80%;
+        padding: 30px 0px 10px 50px;
+        min-width: 90%;
+        
+    }
+    
+    .main > .text-main > p{
+        font-size: 1.2rem;
+        padding: 0px;
+        padding: 30px 0px 50px 50px;
+        max-width: 90%;
+    }
+    
+    .cssbuttons-io-button{
+        min-width: 20%;
+        margin: auto;
+        
+
+     }
+ 
+    .animation{
+        margin: auto;
+        min-width: 40%;
+    }
+
+   
+
+    br{
+        display: none;
+    }
 }
 
