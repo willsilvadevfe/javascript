@@ -1,77 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap'); /*Roboto*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"); /*Roboto*/
 
 /*Colors: #8FAADF - #E4E5E9*/
 
-
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-.container{
-    width: 100vw;
-    height: 100vh;
+.container {
+  width: 100vw;
+  height: 100vh;
 }
 
-body{
-    background-color: #202125;
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+body {
+  background-color: #202125;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
-span{
-    color: #8FAADF;
+span {
+  color: #8faadf;
 }
 
-.header{
-    display: flex;
-    justify-content: space-evenly;
-    text-align: center;
-    flex-direction: row;
-    max-width: 48%;
-    padding-top: 20px;
+.card {
+  width: 25%;
 }
 
-.header > .nav > a{
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: #E4E5E9;
-    
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  flex-direction: row;
+  max-width: 48%;
+  padding-top: 20px;
 }
 
-.nav > a:hover{
-    color: #8FAADF;
-    transition: .2s;
+.header > .nav > a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #e4e5e9;
 }
 
-.main{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding-top: 5%;
+.nav > a:hover {
+  color: #8faadf;
+  transition: 0.2s;
 }
 
-
-.text-about > h1{
-    color: #fff;
-    font-size: 2.9rem;
-    letter-spacing: -2px;
-    padding-bottom: 20px;
-    line-height: 40px;
-    width: 600px;
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 5%;
 }
 
-.text-about > p{
-    color: #fff;
-    font-size: 1.1rem;
-    width: 38rem;
+.text-about > h1 {
+  color: #fff;
+  font-size: 2.5rem;
+  letter-spacing: -2px;
+  padding-bottom: 20px;
+  line-height: 2.1rem;
+  width: 38rem;
 }
 
-.only-mobile{
-    display: none;
+.text-about > p {
+  color: #fff;
+  font-size: 0.98rem;
+  width: 38rem;
+  padding-bottom: 20px;
 }
 
+.only-mobile {
+  display: block;
+}
 
+hr {
+  display: none;
+}
 
-
-
+br {
+  display: none;
+}

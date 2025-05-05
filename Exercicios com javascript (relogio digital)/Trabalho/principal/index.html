@@ -1,46 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../estilos/style.css">
-    <link rel="stylesheet" href="../estilos/mediaqueries.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../estilos/style.css" />
+    <link rel="stylesheet" href="../estilos/mediaqueries.css" />
     <title>Landing page</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="header">
-            <div class="nav"><a href="#">Início</a></div>
-            <div class="nav"><a href="../about/about.html">Sobre</a></div>
-            <div class="nav"><a href="#">Contato</a></div>
+      <div class="header">
+        <div class="nav"><a href="../principal/index.html">Início</a></div>
+        <div class="nav"><a href="../about/about.html">Sobre</a></div>
+        <div class="nav"><a href="../calcular/calcular.html">Calcular</a></div>
+      </div>
+      <div class="main">
+        <div class="text-main">
+          <h1>
+            Projeto <span>acadêmico</span> para <span>conclusão</span> de curso.
+          </h1>
+          <br />
+          <p>
+            Este site foi criado como parte de um projeto de conclusão de curso,
+            com o objetivo de facilitar o dia a dia dos operadores da
+            manufatura. Ele oferece uma forma simples e rápida para encontrar
+            valores com precisão para regulagem de dispositivos, tornando a
+            rotina mais prática, eficiente e garantindo a qualidade do processo.
+          </p>
+          <div class="btn">
+            <button class="cssbuttons-io-button">
+              Realizar cálculos
+              <div class="icon">
+                <svg
+                  height="24"
+                  width="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+          </div>
         </div>
-        <div class="main">
-            <div class="text-main">
-                <h1>Projeto <span>acadêmico</span> para <span>conclusão</span> de curso.</h1><br>
-                <p>Este site foi criado como parte de um projeto de conclusão de curso, com o objetivo de facilitar o dia a dia dos operadores da manufatura. Ele oferece uma forma simples e rápida para encontrar valores com precisão para regulagem de dispositivos, tornando a rotina mais prática, eficiente e garantindo a qualidade do processo.</p>
-                <div class="btn"><button class="cssbuttons-io-button">
-                    Realizar cálculos
-                    <div class="icon">
-                      <svg
-                        height="24"
-                        width="24"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M0 0h24v24H0z" fill="none"></path>
-                        <path
-                          d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-                          fill="currentColor"
-                        ></path>
-                      </svg>
-                    </div>
-                  </button></div>
-            </div>
-            <div class="animation">
-                <div class="animationsvg"><img src="../img/animation.svg" alt="animation"></div>
-                <div class="mobilesvg"><img src="../img/mobilesvg.svg" alt="mobilesvg"></div>
-            </div>
+        <div class="animation">
+          <div class="animationsvg">
+            <img src="../img/animation.svg" alt="animation" />
+          </div>
+          <div class="mobilesvg">
+            <img src="../img/mobilesvg.svg" alt="mobilesvg" />
+          </div>
         </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
