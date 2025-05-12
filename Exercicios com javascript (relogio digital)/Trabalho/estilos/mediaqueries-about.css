@@ -3,11 +3,8 @@
     overflow-x: hidden;
   }
 
-  .header {
-    min-width: 100%;
-  }
-
   .main {
+    margin-top: 50px;
     flex-direction: column-reverse;
     flex-wrap: wrap;
   }

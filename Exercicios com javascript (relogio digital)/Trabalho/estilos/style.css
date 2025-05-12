@@ -11,6 +11,7 @@
 .container {
   width: 100vw;
   height: 100vh;
+  display: flex;
 }
 
 body {
@@ -18,28 +19,12 @@ body {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
+.navbar {
+  position: absolute;
+}
+
 span {
   color: #8faadf;
-}
-
-.header {
-  display: flex;
-  justify-content: space-evenly;
-  text-align: center;
-  flex-direction: row;
-  max-width: 48%;
-  padding-top: 20px;
-}
-
-.header > .nav > a {
-  text-decoration: none;
-  font-size: 1.2rem;
-  color: #e4e5e9;
-}
-
-.nav > a:hover {
-  color: #8faadf;
-  transition: 0.2s;
 }
 
 .main {
@@ -47,6 +32,7 @@ span {
   align-items: center;
   justify-content: space-evenly;
   padding-top: 5rem;
+  width: 100%;
 }
 
 .text-main > h1 {
@@ -54,7 +40,7 @@ span {
   font-size: 4rem;
   letter-spacing: -2px;
   max-width: 640px;
-  line-height: 60px;
+  line-height: 3.2rem;
 }
 
 .text-main > p {
@@ -64,17 +50,22 @@ span {
   padding: 10px 0px 50px 0px;
 }
 
+.btn {
+  display: flex;
+  justify-content: center;
+}
+
 /* From Uiverse.io by adamgiebl */
+
 .cssbuttons-io-button {
   background: #8faadf;
   color: #202125;
   padding: 0.35em;
-  padding-left: 1.2em;
+  padding-left: 1em;
   font-size: 17px;
-  font-weight: 500;
+  font-weight: 300;
   border-radius: 0.9em;
   border: none;
-  letter-spacing: 0.05em;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -86,7 +77,6 @@ span {
 
 .cssbuttons-io-button .icon {
   background: white;
-  margin-left: 1em;
   position: absolute;
   display: flex;
   align-items: center;
@@ -117,7 +107,7 @@ span {
 }
 
 .animation {
-  min-width: 32%;
+  min-width: 40%;
 }
 
 .mobilesvg {

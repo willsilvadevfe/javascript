@@ -3,39 +3,38 @@
     overflow-x: hidden;
   }
 
-  .header {
-    min-width: 100%;
-  }
-
   .main > .text-main > h1 {
-    font-size: 2.7rem;
+    font-size: 2.5rem;
     line-height: 80%;
-    padding: 25px 0px 25px 0px;
-    max-width: 85%;
+    padding: 15px 0px 15px 0px;
+    max-width: 95%;
     margin: auto;
+    text-align: start;
   }
 
   .main {
     align-items: flex-start;
     flex-direction: column-reverse;
     padding-top: 10px;
+    text-align: center;
   }
 
   .main > .text-main > p {
     font-size: 1rem;
-    padding: 0px 0px 35px 0px;
-    max-width: 85%;
+    padding: 0px 0px 15px 0px;
+    max-width: 95%;
     margin: auto;
+    text-align: start;
   }
 
   .cssbuttons-io-button {
-    margin: auto;
     min-width: 25%;
+    margin: auto;
   }
 
   .animation {
     margin: auto;
-    width: 65%;
+    width: 80%;
   }
 
   .mobilesvg {
@@ -51,40 +50,39 @@
   .container {
     overflow-x: hidden;
   }
-
-  .header {
-    min-width: 100%;
-  }
-
   .main {
     align-items: flex-start;
     flex-direction: column-reverse;
     padding-top: 10px;
+    text-align: center;
   }
 
   .main > .text-main > h1 {
     font-size: 3rem;
     line-height: 80%;
     padding: 25px 0px 25px 0px;
-    max-width: 85%;
+    max-width: 95%;
     margin: auto;
+    text-align: start;
   }
 
   .main > .text-main > p {
     font-size: 1rem;
-    padding: 0px 0px 40px 0px;
-    max-width: 85%;
+    padding: 0px 0px 20px 0px;
+    max-width: 95%;
     margin: auto;
+    text-align: start;
   }
 
   .cssbuttons-io-button {
     margin: auto;
     min-width: 25%;
+    
   }
 
   .animation {
     margin: auto;
-    width: 48%;
+    width: 75%;
   }
 
   .mobilesvg {
@@ -109,21 +107,24 @@
     align-items: flex-start;
     flex-direction: column-reverse;
     padding-top: 10px;
+    text-align: center;
   }
 
   .main > .text-main > h1 {
     font-size: 3.5rem;
     line-height: 80%;
-    padding: 15px 0px 25px 0px;
-    max-width: 85%;
+    padding: 5px 0px 20px 0px;
+    max-width: 95%;
     margin: auto;
+    text-align: start;
   }
 
   .main > .text-main > p {
     font-size: 1rem;
     padding: 0px 0px 20px 0px;
-    max-width: 85%;
+    max-width: 95%;
     margin: auto;
+    text-align: start;
   }
 
   .cssbuttons-io-button {
@@ -133,7 +134,7 @@
 
   .animation {
     margin: auto;
-    width: 40%;
+    width: 60%;
   }
 
   .mobilesvg {
@@ -146,48 +147,49 @@
 }
 
 @media (min-width: 961px) and (max-width: 1024px) {
-  .container {
-    position: relative;
+.container {
     overflow-x: hidden;
+    width: 100%;
   }
 
   .header {
-    max-width: 100%;
+    min-width: 100%;
   }
 
   .main {
-    align-items: flex-start;
+    justify-content: space-between;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     flex-direction: row;
-    padding-top: 50px;
+    padding-top: 10px;
+    min-width: 100%;
   }
 
   .main > .text-main > h1 {
-    font-size: 3.2rem;
+    font-size: 3.4rem;
     line-height: 80%;
-    max-width: 90%;
-    padding: 80px 0px 20px 30px;
+    padding: 30px 0px 10px 50px;
+    min-width: 100%;
   }
 
   .main > .text-main > p {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     padding: 0px;
-    max-width: 90%;
-    padding: 20px 0px 20px 30px;
+    padding: 30px 0px 50px 50px;
+    max-width: 100%;
   }
 
   .cssbuttons-io-button {
-    min-width: 25%;
-    position: absolute;
-    bottom: 10%;
-    left: 36%;
+    min-width: 20%;
+    margin: auto;
+    margin-left: 35px;
   }
 
   .animation {
-    min-width: 45%;
-  }
-
-  .mobilesvg {
-    width: none;
+    margin: auto;
+    min-width: 40%;
   }
 
   br {
@@ -220,19 +222,20 @@
     font-size: 3.7rem;
     line-height: 80%;
     padding: 30px 0px 10px 50px;
-    min-width: 90%;
+    min-width: 100%;
   }
 
   .main > .text-main > p {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     padding: 0px;
     padding: 30px 0px 50px 50px;
-    max-width: 90%;
+    max-width: 100%;
   }
 
   .cssbuttons-io-button {
     min-width: 20%;
     margin: auto;
+    margin-left: 35px;
   }
 
   .animation {
@@ -244,3 +247,5 @@
     display: none;
   }
 }
+
+
