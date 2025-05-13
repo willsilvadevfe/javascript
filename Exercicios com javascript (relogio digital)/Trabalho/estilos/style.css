@@ -55,6 +55,11 @@ span {
   justify-content: center;
 }
 
+.btn > a {
+  text-decoration: none;
+}
+
+
 /* From Uiverse.io by adamgiebl */
 
 .cssbuttons-io-button {
