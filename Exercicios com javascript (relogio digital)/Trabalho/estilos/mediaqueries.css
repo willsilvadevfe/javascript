@@ -21,7 +21,7 @@
 
   .main > .text-main > p {
     font-size: 1rem;
-    padding: 0px 0px 15px 0px;
+    padding: 10px 0px 15px 0px;
     max-width: 95%;
     margin: auto;
     text-align: start;
@@ -29,7 +29,7 @@
 
   .cssbuttons-io-button {
     min-width: 25%;
-    margin: auto;
+    margin: 15px auto;
   }
 
   .animation {

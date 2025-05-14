@@ -10,31 +10,21 @@ let dados = [
   25.0, 50.0, 75.0, 100.0,
 ];
 
-function dropDown() {
-  const dropdown = document.getElementById("myDropdown");
-  const selectedValue = dropdown.value;
-  const output = document.getElementById("output");
-
-  if (selectedValue) {
-    output.textContent = `You selected: ${selectedValue}`;
-  } else {
-    output.textContent = "";
-  }
-}
-
 const input = document.getElementById("number");
-const calc = document.getElementById("calc");
+const button = document.getElementById("btn");
 const res = document.getElementById("res");
 
+
 function calcular() {
-  const calc = document.getElementById("calc");
   let inputValue = parseFloat(input.value);
 
   if (inputValue <= 0 || isNaN(inputValue)) {
     alert(
-      `Digite apenas números válidos e use "." para separar casas decimais.`
+      `Digite apenas números maiores de que "0", letras e caracteres são inválidos.`
     );
   } else {
-    alert("ok");
+    res.innerHTML += `Tudo certo aqui até, o valor que você digitou foi ${inputValue}`
   }
+
+  
 }
