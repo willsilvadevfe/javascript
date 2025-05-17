@@ -10,6 +10,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../estilos/mediaqueries-about.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
     <link rel="stylesheet" href="../estilos/about.css" />
     <link rel="stylesheet" href="../estilos/card.css" />
     <link rel="stylesheet" href="../estilos/header.css" />
@@ -51,7 +52,7 @@
       </nav>
       </div>
       <div class="main">
-        <div class="card">
+        <div class="card" data-aos="fade-right">
           <img src="../img/profile.png" alt="preview img" />
           <div class="card-body">
             <h2 class="card-title">Willian Silva</h2>
@@ -65,7 +66,7 @@
             </p>
           </div>
         </div>
-        <div class="text-about">
+        <div class="text-about" data-aos="fade-left">
           <h1>
             <span>Tecnologias</span> utilizadas no
             <span>desenvolvimento</span> do website.
@@ -120,5 +121,9 @@
       integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D"
       crossorigin="anonymous"
     ></script>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   </body>
 </html>

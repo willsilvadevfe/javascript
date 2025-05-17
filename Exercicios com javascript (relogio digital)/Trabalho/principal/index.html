@@ -10,6 +10,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../estilos/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="../estilos/mediaqueries.css" />
     <link rel="stylesheet" href="../estilos/header.css" />
     <title>Gerenciador de cálculos</title>
@@ -91,7 +92,7 @@
         </div>
       </nav>
       <div class="main">
-        <div class="text-main">
+        <div class="text-main" data-aos="fade-right">
           <h1>
             Projeto <span>acadêmico</span> para <span>conclusão</span> de curso.
           </h1>
@@ -125,7 +126,7 @@
             </a>
           </div>
         </div>
-        <div class="animation">
+        <div class="animation" data-aos="fade-left">
           <div class="animationsvg">
             <img src="../img/animation.svg" alt="animation" />
           </div>
@@ -145,5 +146,9 @@
       integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
