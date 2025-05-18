@@ -1,4 +1,4 @@
-let dados = [
+const dados = [
   0.5, 1.001, 1.002, 1.003, 1.004, 1.005, 1.006, 1.007, 1.008, 1.009, 1.0, 1.01,
   1.02, 1.03, 1.04, 1.05, 1.06, 1.07, 1.08, 1.09, 1.1, 1.11, 1.12, 1.13, 1.14,
   1.15, 1.16, 1.17, 1.18, 1.19, 1.2, 1.21, 1.22, 1.23, 1.24, 1.25, 1.26, 1.27,
@@ -10,21 +10,75 @@ let dados = [
   25.0, 50.0, 75.0, 100.0,
 ];
 
-const input = document.getElementById("number");
-const button = document.getElementById("btn");
-const res = document.getElementById("res");
+const LIMITE_COMBINACOES = 4;
 
+function buscarCombinacoes() {
+  const input = parseFloat(document.getElementById("valor").value);
+  const resultado = document.getElementById("resultado");
 
-function calcular() {
-  let inputValue = parseFloat(input.value);
+  if (isNaN(input) || input <= 0) {
+    resultado.innerText = "Por favor, insira um número válido.";
+    return;
+  }
+  resultado.innerHTML = "";
 
-  if (inputValue <= 0 || isNaN(inputValue)) {
-    alert(
-      `Digite apenas números maiores de que "0", letras e caracteres são inválidos.`
-    );
+  const ordenado = [...dados].sort((a, b) => b - a);
+  const combinacao = encontrarSoma(ordenado, input);
+
+  if (combinacao) {
+    resultado.style = "text-align: start;";
+
+    resultado.innerHTML +=
+      resultado.innerHTML += `Valor informado \u{27A1} <strong>${input}</strong><br>`;
+    resultado.innerHTML += `Blocos sugeridos \u{27A1} <strong>${combinacao.join(
+      " + "
+    )}</strong>`;
+    resultado.innerHTML += `<hr><h4><strong>Informações importantes:</strong></h4>`;
+    resultado.innerHTML += `<br><li>É importante lembrar que, em caso de dúvidas sobre os procedimentos de regulagem, recomendamos a leitura das instruções disponíveis nos accordions acima.</li>`;
+    resultado.innerHTML += `<br><li>Em caso de não localização de algum bloco considerado no cálculo, deve-se acionar o auditor de qualidade para providenciar a atualização do programa.</li>`;
   } else {
-    res.innerHTML += `Tudo certo aqui até, o valor que você digitou foi ${inputValue}`
+    resultado.style = "text-align: center;";
+    resultado.innerText +=
+      "Lamentamos, mas não foi possível identificar uma combinação compatível com os valores fornecidos.";
+  }
+}
+
+function encontrarSoma(arr, alvo, combinacao = [], somaAtual = 0, index = 0) {
+  const EPSILON = 0.0001;
+
+  if (Math.abs(somaAtual - alvo) < EPSILON) {
+    return combinacao;
   }
 
-  
+  if (combinacao.length >= LIMITE_COMBINACOES) {
+    return null;
+  }
+
+  for (let i = index; i < arr.length; i++) {
+    const valor = arr[i];
+    const novaSoma = somaAtual + valor;
+
+    if (novaSoma - alvo > EPSILON) continue;
+
+    const novaCombinacao = [...combinacao, valor];
+    const resultado = encontrarSoma(arr, alvo, novaCombinacao, novaSoma, i);
+    if (resultado) return resultado;
+  }
+
+  return null;
+}
+
+function escreverComoMaquina(elemento, texto, velocidade = 30) {
+  elemento.innerText = "";
+  let i = 0;
+
+  function escreverProximo() {
+    if (i < texto.length) {
+      elemento.innerText += texto.charAt(i);
+      i++;
+      setTimeout(escreverProximo, velocidade);
+    }
+  }
+
+  escreverProximo();
 }
