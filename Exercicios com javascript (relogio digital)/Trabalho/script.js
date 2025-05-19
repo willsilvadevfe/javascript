@@ -10,14 +10,27 @@ const dados = [
   25.0, 50.0, 75.0, 100.0,
 ];
 
+function limpar() {
+  const clear = document.getElementById("clear");
+  const input = parseFloat(document.getElementById("valor").value);
+  const resultado = document.getElementById("resultado");
+
+  resultado.innerHTML = "";
+  input = "";
+}
+
 const LIMITE_COMBINACOES = 4;
 
 function buscarCombinacoes() {
   const input = parseFloat(document.getElementById("valor").value);
   const resultado = document.getElementById("resultado");
 
+  resultado.innerHTML = "";
+
   if (isNaN(input) || input <= 0) {
-    resultado.innerText = "Por favor, insira um número válido.";
+    resultado.style = "text-align: center;";
+    resultado.innerHTML += `Lamentamos, mas não foi possível identificar uma combinação compatível com os valores fornecidos.`;
+    resultado.innerHTML += `<br>Por gentileza, informe apenas valores numéricos. Entradas contendo letras ou caracteres especiais não são aceitas.`;
     return;
   }
   resultado.innerHTML = "";
@@ -27,19 +40,19 @@ function buscarCombinacoes() {
 
   if (combinacao) {
     resultado.style = "text-align: start;";
-
-    resultado.innerHTML +=
-      resultado.innerHTML += `Valor informado \u{27A1} <strong>${input}</strong><br>`;
-    resultado.innerHTML += `Blocos sugeridos \u{27A1} <strong>${combinacao.join(
-      " + "
-    )}</strong>`;
+    resultado.innerHTML += `<div style="font-size: 1.35rem;">Valor informado \u{27A1} <strong><span style="color: #8faadf;">${input}</strong><br></span></div>`;
+    resultado.innerHTML += `<div style="font-size: 1.35rem;">
+      Blocos: \u{27A1} <strong><span "style="color: #8faadf;">${combinacao.join(
+        ` <span style="color:rgb(255, 255, 255);"> + </span>`
+      )}</strong></span></div>`;
     resultado.innerHTML += `<hr><h4><strong>Informações importantes:</strong></h4>`;
     resultado.innerHTML += `<br><li>É importante lembrar que, em caso de dúvidas sobre os procedimentos de regulagem, recomendamos a leitura das instruções disponíveis nos accordions acima.</li>`;
     resultado.innerHTML += `<br><li>Em caso de não localização de algum bloco considerado no cálculo, deve-se acionar o auditor de qualidade para providenciar a atualização do programa.</li>`;
+    resultado.innerHTML += `<br><li>O dispositivo deve ser regulado sempre com o relógio comparador ajustado exatamente em '0,00 mm', assegurando que o ponteiro complete apenas uma única volta durante a medição.</li>`;
   } else {
     resultado.style = "text-align: center;";
-    resultado.innerText +=
-      "Lamentamos, mas não foi possível identificar uma combinação compatível com os valores fornecidos.";
+    resultado.innerHTML += `Lamentamos, mas não foi possível identificar uma combinação compatível com os valores fornecidos.`;
+    resultado.innerHTML += `<br>Por gentileza, informe apenas valores numéricos. Entradas contendo letras ou caracteres especiais não são aceitas.`;
   }
 }
 
@@ -61,7 +74,7 @@ function encontrarSoma(arr, alvo, combinacao = [], somaAtual = 0, index = 0) {
     if (novaSoma - alvo > EPSILON) continue;
 
     const novaCombinacao = [...combinacao, valor];
-    const resultado = encontrarSoma(arr, alvo, novaCombinacao, novaSoma, i);
+    const resultado = encontrarSoma(arr, alvo, novaCombinacao, novaSoma, i + 1);
     if (resultado) return resultado;
   }
 

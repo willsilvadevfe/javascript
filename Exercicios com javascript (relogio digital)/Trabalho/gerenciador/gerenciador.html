@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="../estilos/header.css">
     <link rel="stylesheet" href="../estilos/gerenciador.css">
     <link rel="stylesheet" href="../estilos/ger-mediaquery.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
     <title>Landing page</title>
 </head>
 <body>
     <div class="container">
-      <nav class="navbar navbar-dark bg-transparent fixed-top">
+       <nav style="position: absolute;" class="navbar navbar-dark bg-transparent fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="../principal/index.html" style="padding: 15px"
-            >COMPANY<span> LOGO</span></a>
+          <a class="navbar-brand" href="../principal/index.html" style="padding: 15px;">COMPANY<span> LOGO</span></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -44,13 +44,13 @@
           </div>
         </div>
       </nav>
-    <div class="main">
-        <h1>Gerenciador de <span>cálculo automático.</span></h1>
-        <p>Para garantir o uso correto da ferramenta e evitar erros nos resultados, é fundamental que você leia atentamente todas as instruções contidas nas abas do accordion antes de iniciar o processo de cálculo. Cada aba contém orientações importantes que explicam como inserir os dados corretamente e quais critérios manuais são considerados importantes para uma melhor precisão.</p>
+    <div class="main" data-aos="fade-right">
+        <h1><span>Gerenciador</span> de <span>cálculo</span> automático.</h1>
+        <p>Para garantir o uso correto da ferramenta e evitar erros nos resultados, é fundamental que você leia todas as instruções contidas abaixo antes de iniciar o processo. Cada aba contém orientações importantes que explicam como inserir os dados corretamente e quais critérios manuais são considerados importantes para uma melhor precisão.</p>
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <button class="accordion-button collapsed" style="background-color: #8faadf;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                   Observações importantes
                 </button>
               </h2>
@@ -82,7 +82,7 @@
               <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <h6><strong>Funcionalidade</strong></h6>
-                    <li>Digite o valor desejado no campo de entrada (input), utilizando ponto para separar casas decimais (ex: 35.15).</li>
+                    <li>Digite o valor desejado no campo de entrada (input), utilizando ponto ou vírgula para separar casas decimais (ex: 35.15).</li>
                     <li>Clique no botão para gerar o cálculo.</li>
                     <li>O sistema processará automaticamente o valor e exibirá a combinação dos blocos padrão recomendada para a regulagem.</li>
                 </div>
@@ -91,8 +91,11 @@
               </div>
             </div>
             <div class="input-btn">
-              <input type="number" step="0.001" id="valor" placeholder="">
-        <button onclick="buscarCombinacoes()">Buscar</button>
+        <input type="number" step="0.001" id="valor" placeholder="Valor">
+        <div class="btns">
+          <button onclick="buscarCombinacoes()">Buscar</button>
+          <button id="clear" onclick="limpar()">Limpar</button>
+        </div>
         </div>
       <div class="res">
       <p id="resultado"></p>
@@ -103,5 +106,9 @@
     <script src="../script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js" integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
