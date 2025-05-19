@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 @media only screen and (max-width: 600px) {
   .container {
     overflow-x: hidden;
@@ -74,17 +76,19 @@
     width: 5.5rem;
     background-color: #8faadf;
   }
+
   .input-btn > input {
     width: 6rem;
   }
+
   .res {
     max-width: 100%;
     margin: 0 auto;
   }
 }
 
-@media (min-width: 769px) and (max-width: 960px){
-      .container {
+@media (min-width: 769px) and (max-width: 960px) {
+  .container {
     overflow-x: hidden;
     margin: auto;
     min-width: 90%;
@@ -118,17 +122,19 @@
     width: 5.5rem;
     background-color: #8faadf;
   }
+
   .input-btn > input {
     width: 6rem;
   }
+
   .res {
     max-width: 100%;
     margin: 0 auto;
   }
 }
 
-@media (min-width: 961px) and (max-width: 1024px){
-          .container {
+@media (min-width: 961px) and (max-width: 1024px) {
+  .container {
     overflow-x: hidden;
     margin: auto;
     min-width: 90%;
@@ -162,9 +168,11 @@
     width: 5.5rem;
     background-color: #8faadf;
   }
+
   .input-btn > input {
     width: 6rem;
   }
+
   .res {
     max-width: 100%;
     margin: 0 auto;
