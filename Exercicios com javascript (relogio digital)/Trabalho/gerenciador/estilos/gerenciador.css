@@ -79,14 +79,15 @@ span {
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 20px auto;
-  padding: 20px;
+  margin: 10px auto;
+  padding: 10px;
+ 
 }
 
-.input-btn > input {
+.input-btn > label > input {
   margin: 5px;
-  height: 3rem;
-  width: 7rem;
+  height: 2.5rem;
+  width: 5rem;
   border: 1px solid #000;
   border-radius: 8px;
   background-color: #fff;
@@ -95,10 +96,14 @@ span {
   color: #000;
 }
 
+label{
+  font-size: 1.2rem;
+}
+
 .input-btn > .btns > button {
   margin: 5px;
-  height: 3rem;
-  width: 7rem;
+  height: 2.5rem;
+  width: 5rem;
   border: none;
   border: 2px solid rgb(0, 0, 0);
   background-color: #8faadf;

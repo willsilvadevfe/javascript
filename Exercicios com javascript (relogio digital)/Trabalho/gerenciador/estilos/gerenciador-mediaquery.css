@@ -25,7 +25,7 @@
   .input-btn {
     flex-direction: row;
     justify-content: space-evenly;
-    max-width: 95%;
+    min-width: 90%;
   }
 
   .input-btn > .btns > button {
