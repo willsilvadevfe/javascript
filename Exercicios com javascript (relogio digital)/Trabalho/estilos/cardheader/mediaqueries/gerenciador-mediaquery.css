@@ -115,16 +115,20 @@
   .input-btn {
     flex-direction: row;
     justify-content: space-evenly;
-    max-width: 100%;
+    min-width: 100%;
   }
 
   .input-btn > .btns > button {
-    width: 5.5rem;
+    width: 4rem;
     background-color: #8faadf;
   }
 
   .input-btn > input {
-    width: 6rem;
+    width: 4rem;
+  }
+
+  .input-btn{
+    color: #8faadf;
   }
 
   .res {
