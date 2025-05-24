@@ -15,8 +15,8 @@ function limpar() {
   const input = parseFloat(document.getElementById("valor").value);
   const resultado = document.getElementById("resultado");
 
+  document.getElementById("valor").value = "";
   resultado.innerHTML = "";
-  input = "";
 }
 
 const LIMITE_COMBINACOES = 4;
