@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listas ligadas</title>
+  </head>
+  <body>
+    <h1>Litas ligadas ou encadeadas</h1>
+    <script>
+      class Node {
+        constructor(valor) {
+          this.value = value;
+          this.next = null;
+        }
+      }
+
+      class LinkedList {
+        #size;
+        constructor() {
+          this.head = null;
+          this.tail = null;
+          this.#size = 0;
+        }
+
+        append(value) {
+          //Método que adiciona no final da lista
+          const newNode = new Node(value);
+          if (this.head === null) {
+            this.head = newNode;
+            this.tail = newNode;
+          } else {
+            const last = this.tail;
+            last.next = newNode;
+            this.tail = newNode;
+          }
+          this.#size++;
+        }
+
+        prepend(value) {
+          //Método que adiciona no início da lista
+        }
+
+        remove(value) {
+          //Método que remove o valor
+        }
+
+        insertAt(position, value) {
+          //Método que insere novo valor no meio
+        }
+
+        removeAt(position) {
+          //Método que remove valor do meio
+        }
+
+        indexOf(valor) {
+          //Método que retorna a posição do valor
+        }
+
+        isEmpty() {
+          //Método que ve se está vazio
+        }
+
+        size() {
+          //Método que mostra o tamanho
+        }
+
+        print() {
+          //Método que imprime resultado
+        }
+      }
+
+      const list = new LinkedList();
+    </script>
+  </body>
+</html>
