@@ -39,6 +39,10 @@
 
         prepend(value) {
           //Método que adiciona no início da lista
+          const newNode = new Node(value);
+          newNode.next = this.head;
+          this.head = newNode;
+          this.#size++;
         }
 
         remove(value) {
