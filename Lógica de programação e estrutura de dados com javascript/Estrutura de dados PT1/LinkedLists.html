@@ -62,15 +62,25 @@
         }
 
         isEmpty() {
+          return this.head === null;
           //Método que ve se está vazio
         }
 
-        size() {
+        get size() {
           //Método que mostra o tamanho
+          return this.#size;
         }
 
         print() {
           //Método que imprime resultado
+          let current = this.head;
+          let result = "";
+          while (current) {
+            result += current.value + "--->";
+            current = current.next;
+          }
+
+          console.log(result + "---> Size: " + this.#size);
         }
       }
 
