@@ -39,9 +39,6 @@
           um desenvolvedor Full-stack, ampliando meus conhecimentos para atuar
           no back-end e oferecer soluções completas.
         </p>
-        <ul class="actions">
-          <li><a href="#" class="button">Saiba mais</a></li>
-        </ul>
       </section>
       <!-- Two -->
       <section id="two">
@@ -106,7 +103,6 @@
           </article>
         </div>
       </section>
-
       <!-- Three -->
       <section id="three">
         <h2>Entre em contato</h2>
@@ -119,7 +115,7 @@
         </p>
         <div class="row">
           <div class="col-8 col-12-small">
-            <form action="https://formsubmit.co/ seu@email.com " method="POST">
+            <form id="contact-form">
               <div class="row gtr-uniform gtr-50">
                 <div class="col-6 col-12-xsmall">
                   <input
@@ -148,11 +144,20 @@
                     required
                   ></textarea>
                 </div>
+                <div class="col-12">
+                  <!-- O botão de envio deve estar dentro do <form> -->
+                  <ul class="actions">
+                    <li>
+                      <input
+                        id="submit"
+                        type="submit"
+                        value="Enviar"
+                      />
+                    </li>
+                  </ul>
+                </div>
               </div>
             </form>
-            <ul class="actions">
-              <li><input type="submit" value="Enviar" /></li>
-            </ul>
           </div>
           <div class="col-4 col-12-small">
             <ul class="labeled-icons">
@@ -229,5 +234,7 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/form-api.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   </body>
 </html>

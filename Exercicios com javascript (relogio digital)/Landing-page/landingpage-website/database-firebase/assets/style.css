@@ -1,0 +1,73 @@
+/*Fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"); /*Open Sans*/
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"); /*Oswald*/
+
+/*Colors
+background #1e1e1ef5
+*/
+
+/*
+ <form id="cadastro-form">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" required /><br />
+          <label for="email">Email:</label>
+          <input type="email" id="email" required /><br />
+          <label for="cpf">Mensagem</label>
+          <textarea name="msg" id="msg" required></textarea><br />
+          <button type="submit">Enviar</button>
+        </form>
+*/
+
+body {
+  width: 100vw;
+  height: 100vh;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  background-color: #1e1e1ef5;
+}
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+}
+
+.right-side {
+  width: 40vw;
+}
+
+h1 {
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  font-size: 4rem;
+  line-height: 59px;
+  color: #ffffffdc;
+}
+
+p {
+  margin-left: 9rem;
+  padding: 0px;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  max-width: 60%;
+  color: #ffffffc9;
+}
+
+svg {
+}
