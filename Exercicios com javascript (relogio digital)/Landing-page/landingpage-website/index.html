@@ -14,7 +14,7 @@
     <header id="header">
       <div class="inner">
         <a href="#" class="image avatar"
-          ><img src="images/bg.jpg" alt="profile"
+          ><img class="profile" src="images/profile.png" alt="profile"
         /></a>
         <h1>
           <strong>
@@ -115,13 +115,13 @@
         </p>
         <div class="row">
           <div class="col-8 col-12-small">
-            <form id="contact-form">
+            <form id="cadastro-form">
               <div class="row gtr-uniform gtr-50">
                 <div class="col-6 col-12-xsmall">
                   <input
                     type="text"
                     name="name"
-                    id="name"
+                    id="nome"
                     placeholder="Nome"
                     required
                   />
@@ -138,21 +138,16 @@
                 <div class="col-12">
                   <textarea
                     name="message"
-                    id="message"
+                    id="msg"
                     placeholder="Mensagem"
                     rows="4"
                     required
                   ></textarea>
                 </div>
                 <div class="col-12">
-                  <!-- O botão de envio deve estar dentro do <form> -->
                   <ul class="actions">
                     <li>
-                      <input
-                        id="submit"
-                        type="submit"
-                        value="Enviar"
-                      />
+                      <input id="submit" type="submit" value="Enviar" />
                     </li>
                   </ul>
                 </div>
@@ -236,5 +231,81 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/form-api.js"></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+      // Configurações do Firebase
+      const firebaseConfig = {
+        apiKey: "AIzaSyAdgXwnmiPhVcM3t9j4DZAuv9sL6v_zVx8",
+        authDomain: "cadastro-5c535.firebaseapp.com",
+        databaseURL: "https://cadastro-5c535-default-rtdb.firebaseio.com",
+        projectId: "cadastro-5c535",
+        storageBucket: "cadastro-5c535.firebasestorage.app",
+        messagingSenderId: "320165659276",
+        appId: "1:320165659276:web:bcda1fdc9ab97c9517b1a9",
+        measurementId: "G-HPJH81FYG3",
+      };
+
+      // Inicializa Firebase
+      firebase.initializeApp(firebaseConfig);
+      const database = firebase.database();
+
+      // Envia dados para o Firebase
+      document
+        .getElementById("cadastro-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const nome = document.getElementById("nome").value;
+          const email = document.getElementById("email").value;
+          const msg = document.getElementById("msg").value;
+
+          const usuario = {
+            nome,
+            email,
+            msg,
+          };
+
+          database
+            .ref("usuarios")
+            .push(usuario)
+            .then(() => {
+              Swal.fire({
+                title: "Mensagem enviada com sucesso!",
+                icon: "success",
+                confirmButtonText: "OK",
+                confirmButtonColor: "#ff9900", // cor do botão
+                background: "#fff", // cor de fundo da caixa
+                color: "#333", // cor do texto
+                customClass: {
+                  confirmButton: "meu-botao", // classe personalizada do botão
+                  title: "meu-titulo", // classe personalizada do título
+                  popup: "meu-popup", // classe personalizada da caixa
+                },
+              });
+
+              document.getElementById("cadastro-form").reset();
+            })
+            .catch((error) => {
+              Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Algo deu errado!",
+                footer: '<a href="#">Por que tenho esse problema?</a>',
+                background: "#191919", // cor de fundo da caixa
+                color: "#333", // cor do texto
+                customClass: {
+                  confirmButton: "meu-botao", // classe personalizada do botão
+                  title: "meu-titulo", // classe personalizada do título
+                  popup: "meu-popup", // classe personalizada da caixa
+                },
+              });
+            });
+        });
+    </script>
   </body>
 </html>
