@@ -3086,7 +3086,7 @@ body.is-touch .poptrox-popup .closer {
   /* Header */
 
   #header {
-    background-image: url(images/backmobile.jpg);
+    background-image: url(../);
     background-attachment: scroll;
     background-repeat: no-repeat;
     background-position: center;
