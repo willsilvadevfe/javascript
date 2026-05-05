@@ -1,6 +1,7 @@
 import FirstComponent from "./components/FirstComponent";
 import TemplateExpressions from "./components/TemplateExpressions";
 import Events from "./components/Events";
+import TestComponent from "./components/TestComponent";
 
 function App() {
   return (
@@ -9,6 +10,11 @@ function App() {
       <FirstComponent />
       <TemplateExpressions />
       <Events />
+      <div className="btnFlex">
+        <TestComponent />
+        <TestComponent />
+        <TestComponent />
+      </div>
     </>
   );
 }
