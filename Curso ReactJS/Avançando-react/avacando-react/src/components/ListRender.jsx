@@ -1,14 +1,15 @@
 import { useState } from "react";
 
 const ListRender = () => {
-  const [number] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
+  const [number] = useState([1, 2, 3, 4, 5, 6]);
 
   return (
     <div>
-      <h3>Renderização de lista</h3>
-      {number.map((item) => (
-        <p>Valores no Array: {item}</p>
-      ))}
+      <ul>
+        {number.map((item) => (
+          <li>{item * 10}</li>
+        ))}
+      </ul>
     </div>
   );
 };

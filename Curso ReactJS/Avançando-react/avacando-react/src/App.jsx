@@ -1,6 +1,7 @@
 import "./App.css";
 import Road from "./assets/road.jpg";
 import ListRender from "./components/ListRender";
+import ListRenderKey from "./components/ListRenderKey";
 import ManageData from "./components/ManageData";
 
 function App() {
@@ -25,7 +26,8 @@ function App() {
       </p>
       <img src={Road} alt="Road" />
       <ManageData />
-      <ListRender/>
+      <ListRender />
+      <ListRenderKey />
     </>
   );
 }
