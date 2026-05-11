@@ -1,11 +1,14 @@
 import "./App.css";
 import Road from "./assets/road.jpg";
+import CarDetails from "./components/CarDetails";
 import ConditionalRender from "./components/ConditionalRender";
 import ListRender from "./components/ListRender";
 import ListRenderKey from "./components/ListRenderKey";
 import ManageData from "./components/ManageData";
+import ShowUserName from "./components/ShowUserName";
 
 function App() {
+  const usuario = "Joaquim"
   return (
     <>
       <h2>Avançando em React</h2>
@@ -30,6 +33,8 @@ function App() {
       <ListRender />
       <ListRenderKey />
       <ConditionalRender />
+      <ShowUserName usuario={usuario} />
+      <CarDetails brand="Volkswagen" KM={236800} color="Branco" year={2008} flex={false}/>
     </>
   );
 }
