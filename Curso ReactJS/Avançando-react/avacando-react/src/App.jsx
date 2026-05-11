@@ -1,5 +1,6 @@
 import "./App.css";
 import Road from "./assets/road.jpg";
+import ConditionalRender from "./components/ConditionalRender";
 import ListRender from "./components/ListRender";
 import ListRenderKey from "./components/ListRenderKey";
 import ManageData from "./components/ManageData";
@@ -28,6 +29,7 @@ function App() {
       <ManageData />
       <ListRender />
       <ListRenderKey />
+      <ConditionalRender />
     </>
   );
 }
