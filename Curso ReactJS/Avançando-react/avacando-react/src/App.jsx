@@ -2,13 +2,17 @@ import "./App.css";
 import Road from "./assets/road.jpg";
 import CarDetails from "./components/CarDetails";
 import ConditionalRender from "./components/ConditionalRender";
+import Container from "./components/Container";
 import ListRender from "./components/ListRender";
 import ListRenderKey from "./components/ListRenderKey";
 import ManageData from "./components/ManageData";
 import ShowUserName from "./components/ShowUserName";
 
+
 function App() {
-  const usuario = "Joaquim"
+  const usuario = "Joaquim";
+
+
   return (
     <>
       <h2>Avançando em React</h2>
@@ -34,7 +38,18 @@ function App() {
       <ListRenderKey />
       <ConditionalRender />
       <ShowUserName usuario={usuario} />
-      <CarDetails brand="Volkswagen" KM={236800} color="Branco" year={2008} flex={false}/>
+      <CarDetails
+        brand="Volkswagen"
+        KM={236800}
+        color="Branco"
+        year={2008}
+        flex={false}
+      />
+      <Container myValue="001">
+        <p>Conteudo dentro do <code>Container</code> no <code>App.jsx</code></p>
+      </Container>
+
+      
     </>
   );
 }
