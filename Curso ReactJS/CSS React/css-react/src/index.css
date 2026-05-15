@@ -2,8 +2,12 @@ body{
   margin: 0;
   padding: 0;
   font-family: Helvetica;
+  background-color: #000000ad;
 }
 
 h2{
   color: #1d4141b0;
+  text-align: center;
+  padding: 10px;
+  background-color: antiquewhite;
 }
