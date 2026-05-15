@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import Road from "./assets/road.jpg";
 import CarDetails from "./components/CarDetails";
@@ -7,10 +8,18 @@ import ListRender from "./components/ListRender";
 import ListRenderKey from "./components/ListRenderKey";
 import ManageData from "./components/ManageData";
 import ShowUserName from "./components/ShowUserName";
+import Message from "./components/Message";
+import ChangeMessageState from "./components/ChangeMessageState";
 
 
 function App() {
   const usuario = "Joaquim";
+
+  const [message, setMessage] = useState("")
+
+  const handleMessage = (msg) => {
+    setMessage(msg)
+  }
 
 
   return (
@@ -48,6 +57,8 @@ function App() {
       <Container myValue="001">
         <p>Conteudo dentro do <code>Container</code> no <code>App.jsx</code></p>
       </Container>
+      <Message msg={message}/>
+      <ChangeMessageState handleMessage={handleMessage}/>
 
       
     </>
