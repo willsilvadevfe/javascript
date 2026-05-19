@@ -1,0 +1,17 @@
+.classTrue{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: lightgreen;
+    border: 1px solid black;
+
+}
+
+.classFalse{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: lightcoral;
+    border: 1px solid black;
+
+}
