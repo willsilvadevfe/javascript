@@ -1,5 +1,7 @@
 import './App.css'
+import LearningUseState from './components/LearningUseState.jsx'
 import Sale from './components/Sale.jsx'
+import TestUseEffect from './components/TestUseEffect.jsx'
 
 function App() {
 
@@ -7,6 +9,8 @@ function App() {
   return (
    <div>
     <Sale />
+    <TestUseEffect />
+    <LearningUseState />
    </div>
   )
 }

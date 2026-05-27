@@ -5,9 +5,8 @@ import { CiSquarePlus } from "react-icons/ci";
 import { GiBasketballJersey } from "react-icons/gi";
 
 const Sale = () => {
-
 const [sale, setSale] = useState(0)
-const [price, setPrice] = useState(25)
+const [price] = useState(25)
 
   return (
     <div className="product">

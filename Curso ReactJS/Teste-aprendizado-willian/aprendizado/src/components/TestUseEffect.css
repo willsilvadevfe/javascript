@@ -1,0 +1,16 @@
+.btnLike{
+    width: 100px;
+    height: 40px;
+    font-size: 1.1em;
+    margin: 10px;
+    border-radius: 8px;
+    border: 2px solid lightgray;
+    background-color: aliceblue;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btnLike:hover{
+    background-color: rgba(87, 205, 221, 0.226);
+    border: 2px solid rgba(0, 0, 0, 0.233);
+}
