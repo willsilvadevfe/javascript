@@ -1,5 +1,6 @@
 import './App.css'
-import LearningApi from './components/LearningApi.jsx'
+
+import TestApi from './components/TestApi.jsx'
 
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
 
   return (
    <div>
-    <LearningApi />
+    <TestApi />
    </div>
   )
 }
