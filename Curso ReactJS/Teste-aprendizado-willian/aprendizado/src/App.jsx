@@ -1,16 +1,13 @@
 import './App.css'
-import LearningUseState from './components/LearningUseState.jsx'
-import Sale from './components/Sale.jsx'
-import TestUseEffect from './components/TestUseEffect.jsx'
+import LearningApi from './components/LearningApi.jsx'
+
 
 function App() {
 
 
   return (
    <div>
-    <Sale />
-    <TestUseEffect />
-    <LearningUseState />
+    <LearningApi />
    </div>
   )
 }
