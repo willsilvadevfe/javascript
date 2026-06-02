@@ -1,14 +1,10 @@
 import './App.css'
-
-import TestApi from './components/TestApi.jsx'
-
+import ApiTest from './components/ApiTest.jsx'
 
 function App() {
-
-
   return (
    <div>
-    <TestApi />
+    <ApiTest />
    </div>
   )
 }
