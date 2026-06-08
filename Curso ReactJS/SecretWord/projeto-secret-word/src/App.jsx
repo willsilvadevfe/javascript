@@ -82,12 +82,38 @@ function App() {
         ...actualGuessedLetters,
         normalizedLetter,
       ]);
+
+      setGuessedLetters((actualGuesses) => actualGuesses - 1)
     }
   };
   
-  console.log(guessedLetters);
-  console.log(wrongLetters);
+const clearLetterStates = () =>{
+  setGuessedLetters([])
+  setWrongLetters([])
+}
+
+  useEffect(() => {
+    if(guesses <= 0){
+      setGameStage(stages[2].name)
+    }
+  }, [guesses])
+
+useEffect(() => {
+
+const uniqueLetters = [...new Set(letters)]
+
+if(guessedLetters.length === uniqueLetters.length){
+  setScore((actualScore) => actualScore += 100)
+  startGame()
+}
+
+
+
+}, [guessedLetters])
+
   const retry = () => {
+    setScore(0)
+    setGuessedLetters(guessesQty)
     setGameStage(stages[0].name);
   };
   return (
@@ -105,7 +131,7 @@ function App() {
           score={score}
         />
       )}
-      {gameStage === "end" && <GameOver retry={retry} />}
+      {gameStage === "end" && <GameOver retry={retry} score={score} />}
     </>
   );
 }
