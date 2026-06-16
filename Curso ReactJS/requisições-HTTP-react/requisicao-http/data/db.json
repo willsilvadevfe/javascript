@@ -1,0 +1,35 @@
+{
+  "products": [
+    {
+      "name": "Chinelo",
+      "price": "29.90",
+      "id": "hBGXMpThG3I"
+    },
+    {
+      "name": "Blusa",
+      "price": 299.9,
+      "id": "SqATTtlAMaU"
+    },
+    {
+      "name": "Esova",
+      "price": 9.99,
+      "id": "4D6-8KSRAKQ"
+    },
+    {
+      "name": "Lapis",
+      "price": 5.99,
+      "id": "vJjjXorN_Qo"
+    },
+    {
+      "name": "Caneta",
+      "price": 6.8,
+      "id": "5-tjhXr2QNw"
+    },
+    {
+      "name": "Caderno",
+      "price": 19.99,
+      "id": "pQAgRTNNOIY"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

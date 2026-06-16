@@ -1,0 +1,6 @@
+body{margin:0;font-family:Arial;background:#000;color:#fff}
+.cabecalho{display:flex;justify-content:space-between;padding:20px;background:#111}
+.hero{padding:100px 20px;text-align:center}
+.servicos{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;padding:40px}
+.card{background:#AE8003;padding:20px;border-radius:10px}
+.rodape{text-align:center;padding:30px}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="gerarPDF()">Gerar PDF</button>
+    <script>
+
+function gerarPDF() => {
+const doc = new jsPDF({
+  orientation: "landscape",
+  unit: "mm",
+  format: "a4",
+});
+
+// Moldura
+doc.rect(5, 5, 287, 200);
+
+// -------------------------
+// PEÇA CENTRAL
+// -------------------------
+
+// Corpo principal
+doc.line(110, 100, 250, 100);
+doc.line(110, 110, 250, 110);
+
+// Extremidade direita
+doc.line(250, 100, 250, 110);
+
+// Região afunilada
+doc.line(70, 90, 110, 100);
+doc.line(70, 120, 110, 110);
+
+// Flange esquerda
+doc.rect(60, 85, 5, 40);
+
+// Linhas de contorno da flange
+doc.line(65, 90, 70, 90);
+doc.line(65, 120, 70, 120);
+
+// Eixo de centro (tracejado)
+for (let x = 60; x < 250; x += 5) {
+  doc.line(x, 105, x + 2, 105);
+}
+
+// Datum A
+doc.rect(130, 82, 8, 8);
+doc.text("A", 132.5, 88);
+
+// Marca central
+doc.line(160, 98, 163, 112);
+doc.line(163, 98, 160, 112);
+
+// -------------------------
+// COTAS (SEM VALORES)
+// -------------------------
+
+// Cota superior maior
+doc.line(65, 55, 250, 55);
+
+doc.line(65, 55, 65, 100);
+doc.line(250, 55, 250, 100);
+
+// Setas
+doc.line(65, 55, 68, 53);
+doc.line(65, 55, 68, 57);
+
+doc.line(250, 55, 247, 53);
+doc.line(250, 55, 247, 57);
+
+// Cota superior menor
+doc.line(65, 75, 160, 75);
+
+doc.line(65, 75, 65, 100);
+doc.line(160, 75, 160, 100);
+
+// Setas
+doc.line(65, 75, 68, 73);
+doc.line(65, 75, 68, 77);
+
+doc.line(160, 75, 157, 73);
+doc.line(160, 75, 157, 77);
+
+// Cota inferior
+doc.line(130, 145, 185, 145);
+
+doc.line(130, 145, 130, 105);
+doc.line(185, 145, 185, 105);
+
+doc.line(130, 145, 133, 143);
+doc.line(130, 145, 133, 147);
+
+doc.line(185, 145, 182, 143);
+doc.line(185, 145, 182, 147);
+
+// -------------------------
+// TOLERÂNCIA GEOMÉTRICA
+// -------------------------
+
+doc.line(185, 80, 205, 80);
+doc.line(185, 80, 180, 85);
+
+doc.rect(205, 74, 35, 12);
+
+doc.line(217, 74, 217, 86);
+doc.line(230, 74, 230, 86);
+
+// -------------------------
+
+doc.save("desenho-tecnico.pdf");}
+    </script>
+</body>
+</html>

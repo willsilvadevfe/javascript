@@ -1,0 +1,33 @@
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#000;
+  color:#fff;
+}
+.cabecalho{
+  display:flex;
+  justify-content:space-between;
+  padding:20px;
+}
+.botao{
+  background:#FDCC2A;
+  color:#000;
+  padding:10px 20px;
+  text-decoration:none;
+}
+.hero{
+  text-align:center;
+  padding:100px 20px;
+}
+.servicos{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  padding:40px;
+}
+.card{
+  background:#AE8003;
+  padding:20px;
+  border-radius:12px;
+}
