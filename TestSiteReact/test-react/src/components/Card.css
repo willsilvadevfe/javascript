@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pliant:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pliant:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    
+}
+
+body, html{
+    width: 100vw;
+    height: 100vh;
+}
+
+.AllCards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex: auto;
+    gap: 40px;
+    padding-top: 20px;
+}
+
+.Cards{
+    background-color: #1E293B;
+    box-shadow: 0px 10px 10px rgba(104, 104, 104, 0.548);
+    max-width: 320px;
+    border-radius: 8px;
+    padding: 12px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.titleCard{
+    color: #C6D3DF;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+.paragraphCard{
+    color: #C6D3DF;
+    font-family: 'Pliant', Arial, Helvetica, sans-serif;
+    font-size: 0.85rem;
+    line-height: 20px;
+}
+
+.buttonCard{
+    font-family: 'Pliant', Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    width: 150px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background-color: #7148FC;
+    color: #FFFFFF;
+    border: none;
+}
