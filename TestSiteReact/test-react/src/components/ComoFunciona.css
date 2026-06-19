@@ -1,67 +1,83 @@
+/* ==========================================================================
+   Seção: Como Funciona
+   ========================================================================== */
+
 .como-funciona {
-  padding: var(--espaco-secao) 0;
-  background-color: var(--cor-cinza-claro);
+  padding: 5rem 0;
+  background-color: #f8f9fa; /* Fundo levemente acinzentado para destacar os cards */
 }
 
+/* --- Cabeçalho --- */
 .como-funciona__cabecalho {
   text-align: center;
-  margin-bottom: 3.2rem;
-}
-
-.como-funciona__eyebrow {
-  color: var(--cor-azul);
-  font-weight: 600;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  margin-bottom: 4rem;
 }
 
 .como-funciona__titulo {
-  font-size: clamp(1.7rem, 3vw, 2.3rem);
-  margin-top: 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #212529;
+  margin: 0;
 }
 
+/* --- Cards / Passos --- */
 .como-funciona__passo {
-  position: relative;
-  background-color: var(--cor-branco);
-  border-radius: 0.85rem;
-  padding: 2.2rem 1.8rem;
+  position: relative; /* Necessário para posicionar a setinha (conector) */
+  background-color: #ffffff;
+  padding: 2.5rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   height: 100%;
-  border: 1px solid var(--cor-cinza-borda);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
+.como-funciona__passo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Tipografia interna --- */
 .como-funciona__numero {
-  display: inline-block;
-  font-family: var(--fonte-titulo);
+  display: block;
+  font-size: 4rem;
   font-weight: 800;
-  font-size: 1.1rem;
-  color: var(--cor-branco);
-  background-color: var(--cor-roxo);
-  width: 2.6rem;
-  height: 2.6rem;
-  line-height: 2.6rem;
-  text-align: center;
-  border-radius: 50%;
-  margin-bottom: 1.1rem;
+  line-height: 1;
+  color: rgba(13, 110, 253, 0.1); /* Azul da marca com transparência no fundo */
+  margin-bottom: 1rem;
 }
 
 .como-funciona__passo-titulo {
-  font-size: 1.2rem;
-  margin-bottom: 0.6rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 0.75rem;
 }
 
 .como-funciona__passo-texto {
-  color: var(--cor-texto-suave);
-  font-size: 0.95rem;
+  font-size: 1rem;
+  color: #6c757d;
   line-height: 1.6;
-  margin-bottom: 0;
+  margin: 0;
 }
 
+/* --- Conector (Setinha) --- */
 .como-funciona__conector {
   position: absolute;
-  top: 2.4rem;
-  right: -1.9rem;
-  color: var(--cor-azul);
-  font-size: 1.4rem;
-  font-weight: 700;
+  top: 50%;
+  right: -24px; /* Posiciona a seta no espaço (gutter) entre as colunas do Bootstrap */
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #0d6efd; /* Azul principal */
+  font-weight: bold;
+  z-index: 2;
+}
+
+/* Ajuste responsivo para tablets e telas menores (opcional, caso o gutter mude) */
+@media (max-width: 991px) {
+  .como-funciona__conector {
+    right: -16px;
+    font-size: 1.5rem;
+  }
 }

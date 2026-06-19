@@ -3,25 +3,28 @@ import "./Avaliacoes.css";
 
 const distribuicao = [
   { estrelas: 5, porcentagem: 95 },
-  { estrelas: 4, porcentagem: 3 },
+  { estrelas: 4, porcentagem: 5 },
   { estrelas: 3, porcentagem: 0 },
   { estrelas: 2, porcentagem: 0 },
-  { estrelas: 1, porcentagem: 2 },
+  { estrelas: 1, porcentagem: 0 },
 ];
 
 const depoimentos = [
   {
-    texto: "Tudo foi entregue no prazo e com acabamento impecável.",
-    autor: "Cliente Google",
+    texto: "Excelente lavanderia! Preço ótimo e atendimento excepcional...",
+    autor: "Éven Lorena",
+    sub: "2 meses atrás",
   },
   {
-    texto: "Ótimo serviço, roupas saíram extremamente limpas e cheirosas.",
-    autor: "Cliente Google",
+    texto: "Ótimo atendimento e qualidade dos produtos utilizados...",
+    autor: "Natalyssa Sugahara",
+    sub: "7 meses atrás",
   },
   {
     texto:
-      "Excelente atendimento, preço acessível comparável com a concorrência da região.",
-    autor: "Cliente Google",
+      "Maravilhoso atendimento as roupas chegam super cheirosas e limpas...",
+    autor: "Priscilla Alvarenga",
+    sub: "9 meses atrás",
   },
 ];
 
@@ -33,7 +36,7 @@ export default function Avaliacoes() {
           <div className="col-lg-5">
             <span className="avaliacoes__eyebrow">Resumo do Google</span>
             <h2 className="avaliacoes__titulo">
-              4,9 de 5, segundo quem já lavou com a gente
+              Avaliações de quem já lavou com a gente.
             </h2>
 
             <div className="avaliacoes__resumo">
@@ -74,9 +77,12 @@ export default function Avaliacoes() {
                     <p className="avaliacoes__cartao-texto">
                       “{depoimento.texto}”
                     </p>
-                    <p className="avaliacoes__cartao-autor">
-                      {depoimento.autor}
-                    </p>
+                    <div className="avaliacoes_autor-sub">
+                      <p className="avaliacoes__cartao-autor">
+                        {depoimento.autor}
+                      </p>
+                      <small className="avaliacoes__small-sub">{depoimento.sub}</small>
+                    </div>
                   </div>
                 </div>
               ))}

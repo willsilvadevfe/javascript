@@ -45,7 +45,7 @@ export default function Hero() {
               <p className="hero__depoimento">
                 “Tudo foi entregue no prazo e com acabamento impecável.”
               </p>
-              <p className="hero__depoimento-autor">— Avaliação no Google</p>
+              <p className="hero__depoimento-autor"></p>
             </div>
           </div>
         </div>

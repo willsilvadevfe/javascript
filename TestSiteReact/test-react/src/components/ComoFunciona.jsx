@@ -31,7 +31,7 @@ export default function ComoFunciona() {
           </h2>
         </div>
 
-        <div className="row g-4">
+        <div className="row g-5">
           {passos.map((passo, indice) => (
             <div className="col-md-4" key={passo.numero}>
               <div className="como-funciona__passo">

@@ -7,8 +7,8 @@
   --text-body: #495057;        /* Cinza escuro (textos) */
   --text-muted: #6c757d;       /* Cinza claro */
   --bg-light: #f8f9fa;         /* Fundo levemente cinza/gelo */
-  --success-soft: #d1e7dd;     /* Fundo verde claro para a tag "Aberto" */
-  --success-text: #0f5132;     /* Texto verde escuro */
+  --success-soft: #24d88759;     /* Fundo verde claro para a tag "Aberto" */
+  --success-text: #0c4128;     /* Texto verde escuro */
   --star-color: #ffc107;       /* Amarelo ouro para as estrelas */
 }
 
