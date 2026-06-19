@@ -1,15 +1,25 @@
-import './App.css'
-import Card from './components/Card'
-import Header from './components/Header'
+import Cabecalho from "./components/Cabeçalho.jsx";
+import ComoFunciona from "./components/ComoFunciona.jsx";
+import Hero from "./components/Hero.jsx";
+import Servicos from "./components/Servicos.jsx";
+import Funcionamento from "./components/ComoFunciona.jsx";
+import Avaliacoes from "./components/Avaliacoes.jsx";
+import Localizacao from "./components/Localizacao.jsx";
+import Rodape from "./components/Rodape.jsx";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-
-function App() {
+export default function App() {
   return (
     <>
-      <Header />
-      <Card />
+      <Cabecalho />
+      <main>
+        <Hero />
+        <Servicos />
+        <ComoFunciona />
+        <Avaliacoes />
+        <Localizacao />
+      </main>
+      <Rodape />
     </>
-  )
+  );
 }
-
-export default App

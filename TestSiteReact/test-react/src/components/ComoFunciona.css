@@ -1,0 +1,67 @@
+.como-funciona {
+  padding: var(--espaco-secao) 0;
+  background-color: var(--cor-cinza-claro);
+}
+
+.como-funciona__cabecalho {
+  text-align: center;
+  margin-bottom: 3.2rem;
+}
+
+.como-funciona__eyebrow {
+  color: var(--cor-azul);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.como-funciona__titulo {
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  margin-top: 0.5rem;
+}
+
+.como-funciona__passo {
+  position: relative;
+  background-color: var(--cor-branco);
+  border-radius: 0.85rem;
+  padding: 2.2rem 1.8rem;
+  height: 100%;
+  border: 1px solid var(--cor-cinza-borda);
+}
+
+.como-funciona__numero {
+  display: inline-block;
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--cor-branco);
+  background-color: var(--cor-roxo);
+  width: 2.6rem;
+  height: 2.6rem;
+  line-height: 2.6rem;
+  text-align: center;
+  border-radius: 50%;
+  margin-bottom: 1.1rem;
+}
+
+.como-funciona__passo-titulo {
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.como-funciona__passo-texto {
+  color: var(--cor-texto-suave);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.como-funciona__conector {
+  position: absolute;
+  top: 2.4rem;
+  right: -1.9rem;
+  color: var(--cor-azul);
+  font-size: 1.4rem;
+  font-weight: 700;
+}

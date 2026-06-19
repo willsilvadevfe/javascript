@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bs-primary: #0d6efd;       /* Azul destaque do Bootstrap */
+  --bs-primary-soft: rgba(13, 110, 253, 0.08); /* Azul transparente para fundos */
+  --text-dark: #0a2540;        /* Azul Marinho (Títulos) */
+  --text-body: #495057;        /* Cinza escuro (Textos) */
+  --text-muted: #6c757d;       /* Cinza claro (Subtítulos) */
+  --card-border: rgba(0, 0, 0, 0.05); /* Borda super sutil */
+}
+
+/* --- ESTRUTURA DA SEÇÃO --- */
+.servicos {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #ffffff; /* Fundo branco para contrastar com o Hero */
+  padding: 5rem 0;
+}
+
+/* --- CABEÇALHO DA SEÇÃO --- */
+.servicos__cabecalho {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 4rem auto;
+}
+
+.servicos__titulo {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -1px;
+  margin-bottom: 1rem;
+}
+
+.servicos__subtitulo {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- CARTÕES DE SERVIÇO --- */
+.servicos__cartao {
+  background-color: #ffffff;
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  height: 100%; /* Garante que todos os cartões da linha tenham a mesma altura */
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 4px 12px rgba(10, 37, 64, 0.02);
+}
+
+.servicos__cartao:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(10, 37, 64, 0.08);
+  border-color: rgba(13, 110, 253, 0.15); /* A borda ganha um tom azulado leve */
+}
+
+/* --- ÍCONES (EMOJIS) --- */
+.servicos__icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background-color: var(--bs-primary-soft);
+  border-radius: 16px; /* Quadrado com cantos bem arredondados (squircle) */
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.servicos__cartao:hover .servicos__icone {
+  transform: scale(1.05) rotate(-5deg); /* Leve animação no ícone ao passar o mouse no cartão */
+}
+
+/* --- TEXTOS DO CARTÃO --- */
+.servicos__cartao-titulo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.5px;
+}
+
+.servicos__cartao-texto {
+  font-size: 1rem;
+  color: var(--text-body);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 767.98px) {
+  .servicos {
+    padding: 3.5rem 0;
+  }
+
+  .servicos__titulo {
+    font-size: 1.75rem;
+  }
+
+  .servicos__cabecalho {
+    margin-bottom: 2.5rem;
+    padding: 0 1rem;
+  }
+
+  .servicos__cartao {
+    padding: 2rem 1.5rem;
+  }
+}

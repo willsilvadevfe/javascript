@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bs-primary: #0d6efd;       /* Azul destaque */
+  --bs-primary-hover: #0b5ed7;
+  --text-dark: #0a2540;        /* Azul Marinho (títulos) */
+  --text-body: #495057;        /* Cinza escuro (textos) */
+  --text-muted: #6c757d;       /* Cinza claro */
+  --bg-light: #f8f9fa;         /* Fundo levemente cinza/gelo */
+  --success-soft: #d1e7dd;     /* Fundo verde claro para a tag "Aberto" */
+  --success-text: #0f5132;     /* Texto verde escuro */
+  --star-color: #ffc107;       /* Amarelo ouro para as estrelas */
+}
+
+/* --- ESTRUTURA PRINCIPAL --- */
+.hero {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-light);
+  padding: 5rem 0;
+  min-height: calc(100vh - 80px); /* Ocupa quase a tela toda menos o cabeçalho */
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* --- LADO ESQUERDO: TEXTOS E CHAMADAS --- */
+.hero__selo {
+  display: inline-block;
+  background-color: var(--success-soft);
+  color: var(--success-text);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.hero__titulo {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+  margin-bottom: 1.5rem;
+}
+
+.hero__titulo-destaque {
+  color: var(--bs-primary);
+}
+
+.hero__descricao {
+  font-size: 1.125rem;
+  color: var(--text-body);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 90%;
+}
+
+/* --- BOTÕES DE AÇÃO --- */
+.hero__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.hero__botao-primario,
+.hero__botao-secundario {
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px; /* Cantos arredondados, mas não em formato de pílula */
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero__botao-primario {
+  background-color: var(--bs-primary);
+  color: #ffffff;
+  border: 2px solid var(--bs-primary);
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.2);
+}
+
+.hero__botao-primario:hover {
+  background-color: var(--bs-primary-hover);
+  border-color: var(--bs-primary-hover);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(13, 110, 253, 0.3);
+}
+
+.hero__botao-secundario {
+  background-color: transparent;
+  color: var(--text-dark);
+  border: 2px solid #dee2e6;
+}
+
+.hero__botao-secundario:hover {
+  border-color: var(--text-dark);
+  color: var(--text-dark);
+  background-color: #ffffff;
+}
+
+/* --- LADO DIREITO: CARTÃO DE AVALIAÇÃO --- */
+.hero__cartao-avaliacao {
+  background-color: #ffffff;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 15px 45px rgba(10, 37, 64, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.hero__cartao-avaliacao:hover {
+  transform: translateY(-5px);
+}
+
+.hero__nota {
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.hero__estrelas {
+  color: var(--star-color);
+  font-size: 1.75rem;
+  letter-spacing: 2px;
+  margin: 0.5rem 0;
+}
+
+.hero__avaliacoes-texto {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.hero__divisor {
+  border-top: 1px solid #dee2e6;
+  opacity: 1;
+  width: 50%;
+  margin: 0 auto 1.5rem;
+}
+
+.hero__depoimento {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--text-body);
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.hero__depoimento-autor {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 991.98px) {
+  .hero {
+    padding: 3rem 0;
+    min-height: auto;
+    text-align: center;
+  }
+
+  .hero__titulo {
+    font-size: 2.5rem;
+  }
+
+  .hero__descricao {
+    margin: 0 auto 2rem;
+  }
+
+  .hero__acoes {
+    justify-content: center;
+  }
+
+  .hero__botao-primario,
+  .hero__botao-secundario {
+    width: 100%; /* Botões ocupam 100% da tela no mobile */
+    text-align: center;
+  }
+
+  .hero__cartao-avaliacao {
+    margin-top: 1rem;
+    padding: 2rem 1.5rem;
+  }
+}

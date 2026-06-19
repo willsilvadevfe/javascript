@@ -1,0 +1,67 @@
+/* =========================================================
+   Tokens de design — Lavanderia Lave & Pegue Jd. América
+   Paleta: roxo da marca (#51305D), branco e azul Bootstrap
+   ========================================================= */
+
+:root {
+  /* Cor de marca */
+  --cor-roxo: #51305d;
+  --cor-roxo-escuro: #3a2143;
+  --cor-roxo-claro: #6e4380;
+
+  /* Azul padrão Bootstrap, usado como cor de ação/destaque */
+  --cor-azul: #0d6efd;
+  --cor-azul-escuro: #0a58ca;
+
+  /* Neutros */
+  --cor-branco: #ffffff;
+  --cor-cinza-claro: #f8f9fa;
+  --cor-cinza-borda: #e9ecef;
+  --cor-texto: #212529;
+  --cor-texto-suave: #5c5662;
+
+  /* Tipografia */
+  --fonte-titulo: "Poppins", "Segoe UI", sans-serif;
+  --fonte-corpo: "Inter", "Segoe UI", sans-serif;
+
+  /* Espaçamento de seção */
+  --espaco-secao: 5.5rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-corpo);
+  color: var(--cor-texto);
+  background-color: var(--cor-branco);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--fonte-titulo);
+  color: var(--cor-roxo-escuro);
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

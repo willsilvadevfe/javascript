@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+.avaliacoes {
+  padding: 100px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  font-family: 'Poppins', sans-serif;
+}
+
+.avaliacoes__eyebrow {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(13, 110, 253, 0.1);
+  color: #0d6efd;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.avaliacoes__titulo {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #212529;
+  margin-bottom: 35px;
+}
+
+.avaliacoes__resumo {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.avaliacoes__nota-grande {
+  font-size: 5rem;
+  font-weight: 800;
+  color: #0d6efd;
+  line-height: 1;
+}
+
+.avaliacoes__estrelas {
+  font-size: 1.5rem;
+  color: #ffc107;
+  letter-spacing: 2px;
+}
+
+.avaliacoes__contagem {
+  margin-top: 6px;
+  color: #6c757d;
+  font-size: 0.95rem;
+}
+
+.avaliacoes__barras {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.avaliacoes__linha-barra {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.avaliacoes__rotulo-estrela {
+  min-width: 18px;
+  font-weight: 600;
+  color: #495057;
+}
+
+.avaliacoes__barra-fundo {
+  flex: 1;
+  height: 10px;
+  background: #e9ecef;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.avaliacoes__barra-preenchida {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #0d6efd,
+    #4f8dfd
+  );
+  border-radius: 50px;
+  transition: width 1s ease;
+}
+
+.avaliacoes__cartao {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 20px;
+  height: 100%;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  transition: all 0.35s ease;
+}
+
+.avaliacoes__cartao:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(13, 110, 253, 0.12);
+  border-color: rgba(13, 110, 253, 0.2);
+}
+
+.avaliacoes__cartao-estrelas {
+  color: #ffc107;
+  font-size: 1.2rem;
+  margin-bottom: 18px;
+}
+
+.avaliacoes__cartao-texto {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #495057;
+  margin-bottom: 20px;
+}
+
+.avaliacoes__cartao-autor {
+  margin: 0;
+  font-weight: 600;
+  color: #0d6efd;
+}
+
+@media (max-width: 992px) {
+  .avaliacoes {
+    padding: 80px 0;
+  }
+
+  .avaliacoes__titulo {
+    font-size: 2.2rem;
+  }
+
+  .avaliacoes__nota-grande {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .avaliacoes__titulo {
+    font-size: 1.9rem;
+  }
+
+  .avaliacoes__resumo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .avaliacoes__nota-grande {
+    font-size: 3.5rem;
+  }
+}
