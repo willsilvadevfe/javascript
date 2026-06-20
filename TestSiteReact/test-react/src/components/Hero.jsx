@@ -1,4 +1,5 @@
 import "./Hero.css";
+import { FcGoogle } from "react-icons/fc";
 
 export default function Hero() {
   return (
@@ -6,7 +7,7 @@ export default function Hero() {
       <div className="container hero__container">
         <div className="row align-items-center gy-5">
           <div className="col-lg-7">
-            <span className="badge hero__selo">Aberto agora · Fecha às 00:00</span>
+            
 
             <h1 className="hero__titulo">
               Sua roupa lavada, <br />
@@ -42,10 +43,10 @@ export default function Hero() {
               </div>
               <p className="hero__avaliacoes-texto">68 avaliações no Google</p>
               <hr className="hero__divisor" />
+              <p className="hero__depoimento-autor"><FcGoogle size={44} /></p>
               <p className="hero__depoimento">
                 “Tudo foi entregue no prazo e com acabamento impecável.”
               </p>
-              <p className="hero__depoimento-autor"></p>
             </div>
           </div>
         </div>

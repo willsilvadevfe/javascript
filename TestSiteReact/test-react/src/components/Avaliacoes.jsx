@@ -26,6 +26,12 @@ const depoimentos = [
     autor: "Priscilla Alvarenga",
     sub: "9 meses atrás",
   },
+   {
+    texto:
+      "Local de fácil acesso, muito higiênico e precço justo.",
+    autor: "Alvaro Camargo",
+    sub: "1 mes atrás",
+  },
 ];
 
 export default function Avaliacoes() {
@@ -34,7 +40,7 @@ export default function Avaliacoes() {
       <div className="container">
         <div className="row g-5 align-items-center">
           <div className="col-lg-5">
-            <span className="avaliacoes__eyebrow">Resumo do Google</span>
+      
             <h2 className="avaliacoes__titulo">
               Avaliações de quem já lavou com a gente.
             </h2>
