@@ -46,10 +46,7 @@
   transition: all 0.3s ease;
 }
 
-.localizacao__item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 40px rgba(15, 23, 42, 0.1);
-}
+
 
 .localizacao__icone {
   width: 55px;
