@@ -1,4 +1,7 @@
 import "./Localizacao.css";
+import { GrLocationPin } from "react-icons/gr";
+import { LuClock8 } from "react-icons/lu";
+import { FaPhone } from "react-icons/fa6";
 
 export default function Localizacao() {
   return (
@@ -12,13 +15,13 @@ export default function Localizacao() {
             <ul className="localizacao__lista">
               <li className="localizacao__item">
                 <span className="localizacao__icone" aria-hidden="true">
-                  📍
+                  <GrLocationPin size={24} color="#0d6efd" />
                 </span>
-                <div>
+                <div className="localizacao_endereco">
                   <strong>Endereço</strong>
                   <p>
-                    Boulevard América — Av. João Batista de Souza Soares, 2285
-                    — Loja 4, Jardim América, São José dos Campos - SP,
+                    Boulevard América<br></br> Av. João Batista de Souza Soares, 2285<br></br>
+                   Loja 4, Jardim América<br></br>São José dos Campos - SP,
                     12235-200
                   </p>
                 </div>
@@ -26,19 +29,19 @@ export default function Localizacao() {
 
               <li className="localizacao__item">
                 <span className="localizacao__icone" aria-hidden="true">
-                  🕐
+                  <LuClock8 size={24} color="#0d6efd"/>
                 </span>
-                <div>
+                <div className="localizacao_horario">
                   <strong>Horário</strong>
-                  <p>Aberto agora · Fecha às 00:00</p>
+                  <span>Aberto todos os dias, 07h00 às 00h00</span>
                 </div>
               </li>
 
               <li className="localizacao__item">
                 <span className="localizacao__icone" aria-hidden="true">
-                  📞
+                  <FaPhone size={24} color="#0d6efd"/>
                 </span>
-                <div>
+                <div className="localizacao_telefone">
                   <strong>Telefone</strong>
                   <p>
                     <a href="tel:+5512991495260" className="localizacao__link">
@@ -53,7 +56,7 @@ export default function Localizacao() {
               href="https://wa.me/5512991495260"
               target="_blank"
               rel="noreferrer"
-              className="btn localizacao__botao"
+              className="btn localizacao__botao-falar"
             >
               Falar no WhatsApp
             </a>
