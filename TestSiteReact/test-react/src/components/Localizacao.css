@@ -130,8 +130,14 @@
   border-radius: 14px;
   text-decoration: none;
   border: none;
+  transition: transform 0.3s ease;
 }
 
+.localizacao__botao-falar:hover{
+  box-shadow: 0 15px 45px rgba(10, 37, 64, 0.08);
+  transform: translateY(-3px);
+  
+}
 
 .localizacao__mapa-moldura {
   background: #fff;

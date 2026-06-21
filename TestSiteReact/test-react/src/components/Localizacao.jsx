@@ -56,7 +56,7 @@ export default function Localizacao() {
               href="https://wa.me/5512991495260"
               target="_blank"
               rel="noreferrer"
-              className="btn localizacao__botao-falar"
+              className="localizacao__botao-falar"
             >
               Falar no WhatsApp
             </a>
