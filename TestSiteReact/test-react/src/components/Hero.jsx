@@ -30,7 +30,7 @@ export default function Hero() {
                 Agendar retirada
               </a>
               <a href="tel:+5512991495260" className="btn hero__botao-secundario">
-                (12) 99149-5260
+                Falar com a gente
               </a>
             </div>
           </div>

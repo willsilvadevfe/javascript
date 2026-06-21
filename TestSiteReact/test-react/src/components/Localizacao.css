@@ -149,6 +149,22 @@
   border-radius: 18px;
 }
 
+.name_location{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name_location p{
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding-top: 15px;
+}
+
+.name_location span{
+  color: #0D6EFD;
+}
+
 @media (max-width: 991px) {
   .localizacao {
     padding: 70px 0;

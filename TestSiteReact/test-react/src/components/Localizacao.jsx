@@ -71,6 +71,9 @@ export default function Localizacao() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
+              <div className="name_location">
+              <p>Lave <span>&amp; Pegue</span></p>
+              </div>
             </div>
           </div>
         </div>

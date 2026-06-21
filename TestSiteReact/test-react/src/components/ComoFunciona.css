@@ -2,6 +2,9 @@
    Seção: Como Funciona
    ========================================================================== */
 
+html{
+  scroll-behavior: smooth;
+}
 .como-funciona {
   padding: 5rem 0;
   background-color: #f8f9fa; /* Fundo levemente acinzentado para destacar os cards */
