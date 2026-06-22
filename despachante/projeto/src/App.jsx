@@ -1,6 +1,6 @@
 import "./App.css";
-import "./components/Despachante.jsx";
-import CrisDespachante from "./components/Despachante.jsx";
+import "./components/CrisDespachante.jsx";
+import CrisDespachante from "./components/CrisDespachante.jsx";
 
 function App() {
   return (
