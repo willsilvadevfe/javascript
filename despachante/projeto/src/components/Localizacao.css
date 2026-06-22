@@ -1,0 +1,158 @@
+/* ============================================
+   Localização — Cris Despachante
+   Tema: rosa claro / branco
+   ============================================ */
+
+.cd-localizacao {
+  position: relative;
+  padding: 6rem 1.5rem;
+  background: linear-gradient(180deg, #ffffff 0%, #fff5f8 100%);
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.cd-localizacao.cd-in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cd-localizacao-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ---------- Header ---------- */
+
+.cd-localizacao-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.cd-localizacao-title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  color: #2b2b33;
+  margin: 0 0 0.6rem;
+}
+
+.cd-localizacao-subtitle {
+  font-size: 1rem;
+  color: #6b6b76;
+  margin: 0;
+}
+
+/* ---------- Layout principal: info (esq.) + mapa (dir.) ---------- */
+
+.cd-localizacao-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+@media (max-width: 900px) {
+  .cd-localizacao-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .cd-localizacao-map-col {
+    min-height: 280px;
+  }
+}
+
+/* ---------- Coluna de cards (esquerda) ---------- */
+
+.cd-localizacao-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.cd-localizacao-card {
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  gap: 1.1rem;
+  padding: 1.5rem 1.75rem;
+  background: #ffffff;
+  border: 1px solid #ffe1ec;
+  border-radius: 18px;
+}
+
+
+
+/* ---------- Coluna do mapa (direita) ---------- */
+
+.cd-localizacao-map-col {
+  display: flex;
+  min-height: 320px;
+}
+
+.cd-localizacao-map-wrapper {
+  flex: 1;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #ffe1ec;
+  box-shadow: 0 4px 18px rgba(214, 61, 124, 0.06);
+}
+
+.cd-localizacao-map-wrapper iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+}
+
+.cd-localizacao-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffd2e3, #ffe9f1);
+  color: #d63d7c;
+}
+
+.cd-localizacao-info h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #2b2b33;
+  margin: 0 0 0.5rem;
+}
+
+.cd-localizacao-info p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #6b6b76;
+  margin: 0;
+}
+
+.cd-localizacao-link {
+  color: #d63d7c;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cd-localizacao-link:hover {
+  color: #b82c64;
+  text-decoration: underline;
+}
+
+/* ---------- Acessibilidade ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .cd-localizacao,
+  .cd-localizacao-card {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

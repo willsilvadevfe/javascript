@@ -3,10 +3,13 @@ import { BiTransfer } from "react-icons/bi";
 import { FaClipboardCheck, FaFileSignature, FaWhatsapp, FaLocationDot } from "react-icons/fa6";
 import { RiTrafficLightFill } from "react-icons/ri";
 import { FaMoneyCheckAlt, FaPhoneAlt } from "react-icons/fa";
+import { RiMoneyDollarCircleFill } from "react-icons/ri";
 import { LuClipboardPenLine } from "react-icons/lu";
-import Location from "./Location";
 import Car from '../assets/car.svg'
 import "./CrisDespachante.css";
+import Localizacao from "./Localizacao";
+
+
 
 const WHATSAPP = "5512982726588";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP}`;
@@ -127,9 +130,8 @@ export default function CrisDespachante() {
       {/* ── SERVICES ── */}
       <section className="cd-section">
         <div className="cd-section-inner">
-          <p className="fade-in-up cd-eyebrow">O que eu resolvo</p>
           <h2 className="fade-in-up cd-section-title" data-delay="1">
-            Serviços
+            Nossos Serviços
           </h2>
           <div className="cd-services-grid">
             {services.map((s, i) => (
@@ -150,7 +152,6 @@ export default function CrisDespachante() {
       {/* ── HOW IT WORKS ── */}
       <section className="cd-section cd-section--alt">
         <div className="cd-section-inner">
-          <p className="fade-in-up cd-eyebrow">Simples assim</p>
           <h2 className="fade-in-up cd-section-title" data-delay="1">
             Como funciona
           </h2>
@@ -171,14 +172,18 @@ export default function CrisDespachante() {
         </div>
       </section>
 
-      {/* ── CTA STRIP ── */}
-      <section className="cd-cta-strip">
-        <div className="fade-in-up cd-cta-strip-inner">
-          <h2 className="cd-cta-strip-title">
-            Precisa resolver sua documentação?
+      {/* ── LOCAL ── */}
+            <Localizacao />
+      
+
+        {/* ── CTA STRIP 02 ── */}
+      <section className="cd-cta-strip2">
+        <div className="fade-in-up cd-cta-strip-inner2">
+          <h2 className="cd-cta-strip-title2">
+            Pronto para resolver sua documentação?
           </h2>
-          <p className="cd-cta-strip-sub">
-            Atendimento rápido, transparente e sem dor de cabeça.
+          <p className="cd-cta-strip-sub2">
+            Solicite um orçamento agora mesmo e parcele sua documentação em até 12x no cartão, sem complicações. Atendimento rápido, transparente e sem dor de cabeça.
           </p>
           <a
             href={WHATSAPP_URL}
@@ -186,13 +191,11 @@ export default function CrisDespachante() {
             rel="noreferrer"
             className="cd-cta-strip-btn"
           >
-            <FaWhatsapp size={20} color="#fff" /> Falar no WhatsApp
+            <RiMoneyDollarCircleFill size={20} color="#fff" /> Solicitar Orçamento
           </a>
         </div>
-        <div className="cd-location-container">
-          <Location />
-        </div>
       </section>
+
 
       {/* ── FOOTER ── */}
       <section className="cd-footer">
