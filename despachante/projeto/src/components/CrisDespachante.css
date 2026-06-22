@@ -504,7 +504,7 @@ body {
 /* ------------------------- */
 
 .cd-cta-strip2 {
-  background: var(--#fff);
+  background: #fff;
   border-top: 1px solid #efe3e8;
   border-bottom: 1px solid #efe3e8;
   padding: 80px 35px;
