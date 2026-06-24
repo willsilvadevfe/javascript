@@ -3,717 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="assets/css/style.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <title>FORJA — Treino Sem Limite</title>
 <style>
 
-  @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pliant:ital,wght@0,100..900;1,100..900&family=Water+Brush&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pliant:ital,wght@0,100..900;1,100..900&family=Sedgwick+Ave+Display&family=Water+Brush&display=swap');
-
-  :root{
-    --black: #0a0a0a;
-    --black-soft: #121212;
-    --gray-900: #1a1a1a;
-    --gray-700: #3a3a3a;
-    --gray-500: #6b6b6b;
-    --gray-300: #a8a8a8;
-    --gray-100: #e4e4e4;
-    --white: #f5f5f5;
-    --line: rgba(245,245,245,0.12);
-    --ff-display: 'Anton', 'Arial Narrow', sans-serif;
-    --ff-mono: 'JetBrains Mono', 'Courier New', monospace;
-    --ff-body: 'Inter', -apple-system, sans-serif;
-  }
-
-  @font-face {
-    font-family: 'Anton';
-    src: local('Anton');
-  }
-
-  *{margin:0;padding:0;box-sizing:border-box;}
-
-  html{scroll-behavior:auto;}
-
-  body{
-    background:var(--black);
-    color:var(--white);
-    font-family:var(--ff-body);
-    overflow-x:hidden;
-    cursor:default;
-  }
-
-  ::selection{background:var(--white);color:var(--black);}
-
-  /* ---------- utility ---------- */
-  .wrap{
-    max-width:1280px;
-    margin:0 auto;
-    padding:0 32px;
-  }
-  .eyebrow{
-    font-family:var(--ff-mono);
-    font-size:12px;
-    letter-spacing:0.2em;
-    text-transform:uppercase;
-    color:var(--gray-300);
-    display:flex;
-    align-items:center;
-    gap:10px;
-  }
-  .eyebrow::before{
-    content:'';
-    width:24px;height:1px;
-    background:var(--gray-500);
-    display:inline-block;
-  }
-
-  .name-professional{
-    font-family: 'Sedgwick Ave Display';
-    font-size: 8.3rem;
-    text-transform: uppercase;
-    letter-spacing: -4px;
-  }
-
-  .display{
-    font-family:var(--ff-display);
-    text-transform:uppercase;
-    font-weight:400;
-    line-height:0.92;
-    letter-spacing:-0.01em;
-  }
-  .overflow-hidden{overflow:hidden;}
-  .btn{
-    font-family:var(--ff-mono);
-    font-size:13px;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    background:transparent;
-    border:1px solid var(--gray-700);
-    color:var(--white);
-    padding:18px 32px;
-    cursor:pointer;
-    position:relative;
-    overflow:hidden;
-    transition:border-color .3s;
-  }
-  .btn span{position:relative;z-index:2;}
-  .btn::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:var(--white);
-    transform:translateY(101%);
-    transition:transform .4s cubic-bezier(.65,0,.35,1);
-    z-index:1;
-  }
-  .btn:hover{border-color:var(--white);}
-  .btn:hover::before{transform:translateY(0);}
-  .btn:hover span{color:var(--black);transition:color .4s;}
-  .btn-solid{
-    background:var(--white);
-    color:var(--black);
-  }
-  .btn-solid::before{background:var(--black);}
-  .btn-solid:hover span{color:var(--white);}
-
-  /* ---------- noise overlay ---------- */
-  .noise{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:999;
-    opacity:0.035;
-    mix-blend-mode:overlay;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-
-  /* ---------- progress bar ---------- */
-  .progress-bar{
-    position:fixed;
-    top:0;left:0;
-    height:3px;
-    width:100%;
-    background:var(--white);
-    transform-origin:left;
-    transform:scaleX(0);
-    z-index:1000;
-  }
-
-  /* ---------- cursor dot (desktop only via JS check) ---------- */
-  .cursor-dot{
-    position:fixed;
-    top:0;left:0;
-    width:8px;height:8px;
-    background:var(--white);
-    border-radius:50%;
-    pointer-events:none;
-    z-index:998;
-    transform:translate(-50%,-50%);
-    mix-blend-mode:difference;
-  }
-  .cursor-ring{
-    position:fixed;
-    top:0;left:0;
-    width:36px;height:36px;
-    border:1px solid var(--gray-300);
-    border-radius:50%;
-    pointer-events:none;
-    z-index:998;
-    transform:translate(-50%,-50%);
-    mix-blend-mode:difference;
-  }
-
-  /* ---------- nav ---------- */
-  nav{
-    position:fixed;
-    top:0;left:0;right:0;
-    z-index:100;
-    padding:24px 0;
-    background:linear-gradient(to bottom, rgba(10,10,10,0.9), transparent);
-  }
-  nav .wrap{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-  }
-  .logo{
-    font-family:var(--ff-display);
-    font-size:24px;
-    letter-spacing:0.02em;
-  }
-  .nav-links{
-    display:flex;
-    gap:40px;
-    list-style:none;
-  }
-  .nav-links a{
-    font-family:var(--ff-mono);
-    font-size:12px;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    color:var(--gray-300);
-    text-decoration:none;
-    position:relative;
-  }
-  .nav-links a::after{
-    content:'';
-    position:absolute;
-    left:0;bottom:-6px;
-    width:0;height:1px;
-    background:var(--white);
-    transition:width .3s;
-  }
-  .nav-links a:hover{color:var(--white);}
-  .nav-links a:hover::after{width:100%;}
-  .nav-cta{display:none;}
-  @media (min-width:900px){.nav-cta{display:block;}}
-  @media (max-width:899px){.nav-links{display:none;}}
-
-  /* ---------- HERO ---------- */
-  .hero{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    position:relative;
-    padding-top:120px;
-    padding-bottom:60px;
-  }
-  .hero-bg-text{
-    position:absolute;
-    top:50%;left:50%;
-    transform:translate(-50%,-50%);
-    font-family:var(--ff-display);
-    font-size:min(40vw, 560px);
-    color:transparent;
-    -webkit-text-stroke:1px var(--gray-700);
-    opacity:0.35;
-    white-space:nowrap;
-    z-index:0;
-    user-select:none;
-    pointer-events:none;
-  }
-  .hero-content{
-    position:relative;
-    z-index:2;
-  }
-  .hero-kicker{
-    margin-bottom:28px;
-  }
-  .hero-title{
-    font-size:clamp(56px, 10vw, 148px);
-    margin-bottom:24px;
-  }
-  .hero-title .line{display:block;overflow:hidden;}
-  .hero-title .line span{display:inline-block;}
-  .hero-sub{
-    max-width:540px;
-    font-size:18px;
-    line-height:1.6;
-    color:var(--gray-300);
-    margin-bottom:40px;
-  }
-  .hero-actions{
-    display:flex;
-    gap:16px;
-    flex-wrap:wrap;
-    margin-bottom:64px;
-  }
-  .hero-meta{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:32px;
-    max-width:640px;
-    border-top:1px solid var(--line);
-    padding-top:28px;
-  }
-  .hero-meta .stat-num{
-    font-family:var(--ff-display);
-    font-size:36px;
-    line-height:1;
-  }
-  .hero-meta .stat-label{
-    font-family:var(--ff-mono);
-    font-size:11px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--gray-500);
-    margin-top:6px;
-  }
-  .scroll-cue{
-    position:absolute;
-    bottom:32px;
-    right:32px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:12px;
-    font-family:var(--ff-mono);
-    font-size:11px;
-    letter-spacing:0.1em;
-    color:var(--gray-500);
-    text-transform:uppercase;
-    z-index:2;
-  }
-  .scroll-cue .bar{
-    width:1px;height:48px;
-    background:var(--gray-700);
-    position:relative;
-    overflow:hidden;
-  }
-  .scroll-cue .bar::after{
-    content:'';
-    position:absolute;
-    top:-100%;left:0;
-    width:100%;height:100%;
-    background:var(--white);
-  }
-
-  /* ---------- MARQUEE ---------- */
-  .marquee-section{
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-    padding:28px 0;
-    overflow:hidden;
-    position:relative;
-  }
-  .marquee-track{
-    display:flex;
-    white-space:nowrap;
-    width:max-content;
-  }
-  .marquee-track span{
-    font-family:var(--ff-display);
-    font-size:42px;
-    text-transform:uppercase;
-    color:transparent;
-    -webkit-text-stroke:1px var(--gray-300);
-    padding:0 28px;
-    display:inline-flex;
-    align-items:center;
-    gap:28px;
-  }
-  .marquee-track span.filled{
-    -webkit-text-stroke:0;
-    color:var(--white);
-  }
-  .marquee-track .dot{
-    width:8px;height:8px;
-    border-radius:50%;
-    background:var(--gray-500);
-  }
-
-  /* ---------- SECTION shared ---------- */
-  section{
-    position:relative;
-    padding:140px 0;
-  }
-  .section-head{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    gap:40px;
-    margin-bottom:80px;
-    flex-wrap:wrap;
-  }
-  .section-title{
-    font-size:clamp(40px,6vw,84px);
-    max-width:680px;
-  }
-  .section-desc{
-    max-width:320px;
-    color:var(--gray-300);
-    font-size:15px;
-    line-height:1.7;
-    padding-bottom:8px;
-  }
-
-  /* ---------- METHOD / typewriter ---------- */
-  .method{
-    background:var(--black-soft);
-  }
-  .typewriter-block{
-    font-family:var(--ff-mono);
-    font-size:clamp(20px,2.6vw,30px);
-    line-height:1.7;
-    color:var(--gray-100);
-    max-width:880px;
-    min-height:220px;
-  }
-  .typewriter-block .cursor-char{
-    display:inline-block;
-    width:2px;
-    height:1em;
-    background:var(--white);
-    margin-left:4px;
-    vertical-align:middle;
-    animation:blink 0.9s steps(1) infinite;
-  }
-  @keyframes blink{50%{opacity:0;}}
-  .method-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:1px;
-    background:var(--line);
-    margin-top:80px;
-  }
-  .method-card{
-    background:var(--black-soft);
-    padding:48px 36px;
-  }
-  .method-card .num{
-    font-family:var(--ff-mono);
-    color:var(--gray-500);
-    font-size:13px;
-    margin-bottom:24px;
-    display:block;
-  }
-  .method-card h3{
-    font-family:var(--ff-display);
-    font-size:26px;
-    text-transform:uppercase;
-    margin-bottom:14px;
-  }
-  .method-card p{
-    color:var(--gray-300);
-    font-size:14px;
-    line-height:1.7;
-  }
-  @media (max-width:900px){
-    .method-grid{grid-template-columns:1fr;}
-  }
-
-  /* ---------- PROGRAMS (horizontal scroll pinned) ---------- */
-  .programs{
-    overflow:hidden;
-  }
-  .programs-pin{
-    position:relative;
-  }
-  .programs-track{
-    display:flex;
-    gap:24px;
-    width:max-content;
-    padding-left:32px;
-  }
-  .program-card{
-    width:min(78vw, 460px);
-    flex-shrink:0;
-    border:1px solid var(--line);
-    padding:40px;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    height:520px;
-    background:linear-gradient(160deg, var(--gray-900), var(--black));
-  }
-  .program-card .tag{
-    font-family:var(--ff-mono);
-    font-size:11px;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    color:var(--gray-500);
-  }
-  .program-card .pnum{
-    font-family:var(--ff-display);
-    font-size:120px;
-    line-height:1;
-    color:transparent;
-    -webkit-text-stroke:1px var(--gray-700);
-    align-self:flex-end;
-  }
-  .program-card h3{
-    font-family:var(--ff-display);
-    font-size:38px;
-    text-transform:uppercase;
-    margin-bottom:16px;
-  }
-  .program-card p{
-    color:var(--gray-300);
-    font-size:14px;
-    line-height:1.7;
-    margin-bottom:24px;
-  }
-  .program-card .meta-row{
-    display:flex;
-    justify-content:space-between;
-    font-family:var(--ff-mono);
-    font-size:11px;
-    color:var(--gray-500);
-    text-transform:uppercase;
-    border-top:1px solid var(--line);
-    padding-top:16px;
-  }
-
-  /* ---------- COUNTERS ---------- */
-  .counters{
-    background:var(--white);
-    color:var(--black);
-  }
-  .counters-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:1px;
-    background:rgba(0,0,0,0.1);
-  }
-  .counter-item{
-    background:var(--white);
-    padding:48px 24px;
-    text-align:center;
-  }
-  .counter-item .count-num{
-    font-family:var(--ff-display);
-    font-size:clamp(48px,7vw,88px);
-    line-height:1;
-  }
-  .counter-item .count-label{
-    font-family:var(--ff-mono);
-    font-size:11px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--gray-700);
-    margin-top:12px;
-  }
-  @media (max-width:760px){
-    .counters-grid{grid-template-columns:repeat(2,1fr);}
-  }
-
-  /* ---------- COACHES (image-free cards with reveal mask) ---------- */
-  .coaches-list{
-    display:flex;
-    flex-direction:column;
-  }
-  .coach-row{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:36px 0;
-    border-top:1px solid var(--line);
-    position:relative;
-    overflow:hidden;
-    cursor:pointer;
-  }
-  .coach-row:last-child{border-bottom:1px solid var(--line);}
-  .coach-row .coach-name{
-    font-family:var(--ff-display);
-    font-size:clamp(32px,5vw,64px);
-    text-transform:uppercase;
-    position:relative;
-    z-index:2;
-    transition:color .4s;
-    mix-blend-mode:difference;
-  }
-  .coach-row .coach-role{
-    font-family:var(--ff-mono);
-    font-size:12px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--gray-500);
-    position:relative;
-    z-index:2;
-  }
-  .coach-fill{
-    position:absolute;
-    top:0;left:0;
-    width:100%;height:100%;
-    background:var(--white);
-    transform:scaleY(0);
-    transform-origin:bottom;
-    z-index:1;
-  }
-
-  /* ---------- QUOTE / pinned big statement ---------- */
-  .statement{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    background:var(--black-soft);
-  }
-  .statement-text{
-    font-family:var(--ff-display);
-    font-size:clamp(32px,6.4vw,90px);
-    line-height:1.05;
-    text-transform:uppercase;
-    max-width:1100px;
-  }
-  .statement-text .word{
-    color:var(--gray-700);
-    transition:color .2s;
-  }
-  .statement-text .word.active{
-    color:var(--white);
-  }
-
-  /* ---------- PRICING ---------- */
-  .pricing-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:24px;
-  }
-  .price-card{
-    border:1px solid var(--line);
-    padding:44px 36px;
-    display:flex;
-    flex-direction:column;
-  }
-  .price-card.featured{
-    background:var(--white);
-    color:var(--black);
-    border-color:var(--white);
-  }
-  .price-card .plan-name{
-    font-family:var(--ff-mono);
-    font-size:12px;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    color:var(--gray-500);
-    margin-bottom:24px;
-  }
-  .price-card.featured .plan-name{color:var(--gray-700);}
-  .price-card .plan-price{
-    font-family:var(--ff-display);
-    font-size:56px;
-    margin-bottom:6px;
-  }
-  .price-card .plan-period{
-    font-size:13px;
-    color:var(--gray-500);
-    margin-bottom:32px;
-  }
-  .price-card.featured .plan-period{color:var(--gray-700);}
-  .price-card ul{
-    list-style:none;
-    margin-bottom:36px;
-    flex-grow:1;
-  }
-  .price-card li{
-    font-size:14px;
-    padding:12px 0;
-    border-top:1px solid var(--line);
-    color:var(--gray-300);
-  }
-  .price-card.featured li{
-    border-top:1px solid rgba(0,0,0,0.1);
-    color:var(--gray-700);
-  }
-  @media (max-width:900px){
-    .pricing-grid{grid-template-columns:1fr;}
-  }
-
-  /* ---------- CTA FINAL ---------- */
-  .cta-final{
-    text-align:center;
-    padding:180px 0;
-  }
-  .cta-final .display{
-    font-size:clamp(48px,11vw,180px);
-    line-height:0.95;
-  }
-  .cta-final .sub{
-    max-width:480px;
-    margin:28px auto 48px;
-    color:var(--gray-300);
-  }
-
-  /* ---------- FOOTER ---------- */
-  footer{
-    border-top:1px solid var(--line);
-    padding:80px 0 32px;
-  }
-  .footer-top{
-    display:grid;
-    grid-template-columns:1.4fr 1fr 1fr 1fr;
-    gap:40px;
-    margin-bottom:80px;
-  }
-  .footer-brand .logo{margin-bottom:20px;}
-  .footer-brand p{
-    color:var(--gray-500);
-    font-size:14px;
-    max-width:280px;
-    line-height:1.6;
-  }
-  .footer-col h4{
-    font-family:var(--ff-mono);
-    font-size:11px;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    color:var(--gray-500);
-    margin-bottom:20px;
-  }
-  .footer-col ul{list-style:none;}
-  .footer-col li{margin-bottom:12px;}
-  .footer-col a{
-    color:var(--gray-300);
-    text-decoration:none;
-    font-size:14px;
-  }
-  .footer-col a:hover{color:var(--white);}
-  .footer-bottom{
-    display:flex;
-    justify-content:space-between;
-    padding-top:28px;
-    border-top:1px solid var(--line);
-    font-family:var(--ff-mono);
-    font-size:11px;
-    color:var(--gray-500);
-    text-transform:uppercase;
-    letter-spacing:0.05em;
-    flex-wrap:wrap;
-    gap:12px;
-  }
-  @media (max-width:760px){
-    .footer-top{grid-template-columns:1fr 1fr;}
-  }
-
-  @media (max-width:760px){
-    section{padding:90px 0;}
-    .hero{padding-top:140px;}
-    .hero-meta{grid-template-columns:1fr;gap:20px;}
-  }
-
-  @media (prefers-reduced-motion: reduce){
-    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
-  }
+ 
 </style>
 </head>
 <body>
@@ -778,14 +73,14 @@
 <!-- ============ MARQUEE ============ -->
 <div class="marquee-section">
   <div class="marquee-track">
-    <span class="filled">LOREM IPSUM <i class="dot"></i></span>
-    <span>DOLOR SIT AMET <i class="dot"></i></span>
-    <span class="filled">CONSECTETUR <i class="dot"></i></span>
-    <span>ADIPISCING ELIT <i class="dot"></i></span>
-    <span class="filled">LOREM IPSUM <i class="dot"></i></span>
-    <span>DOLOR SIT AMET <i class="dot"></i></span>
-    <span class="filled">CONSECTETUR <i class="dot"></i></span>
-    <span>ADIPISCING ELIT <i class="dot"></i></span>
+    <span class="filled">Realismo Colorido <i class="dot"></i></span>
+    <span>Remoção a Laser <i class="dot"></i></span>
+    <span class="filled">Realismo Preto & Cinza <i class="dot"></i></span>
+    <span class="filled">Realismo Colorido <i class="dot"></i></span>
+    <span>Remoção a Laser <i class="dot"></i></span>
+    <span class="filled">Realismo Preto & Cinza <i class="dot"></i></span>
+    <span class="filled">Realismo Colorido <i class="dot"></i></span>
+    <span>Remoção a Laser <i class="dot"></i></span>
   </div>
 </div>
 
@@ -794,10 +89,10 @@
   <div class="wrap">
     <div class="section-head">
       <div>
-        <div class="eyebrow" style="margin-bottom:20px;">Lorem ipsum / 01</div>
-        <h2 class="section-title display">Lorem ipsum<br>dolor sit.</h2>
+        <div class="eyebrow" style="margin-bottom:20px;">Localização / 01</div>
+        <h2 class="section-title display">encontre seu<br>próximo traço</h2>
       </div>
-      <p class="section-desc">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod.</p>
+      <p class="section-desc">Descubra o poder da tatuagem feita com amor, arte e comprometimento.</p>
     </div>
 
     <div class="typewriter-block">
@@ -806,19 +101,19 @@
 
     <div class="method-grid">
       <div class="method-card">
-        <span class="num">01</span>
-        <h3>Lorem Ipsum</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.</p>
+        <span class="material-icons">location_on</span>
+        <h3>Onde estamos</h3>
+        <p>Av. Artur Antonio dos Santos, 1008<br> Morumbi, São José dos Campos - SP<br>Código Postal 12236-440.</p>
       </div>
       <div class="method-card">
-        <span class="num">02</span>
-        <h3>Dolor Sit Amet</h3>
-        <p>Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+        <span class="material-icons">phone_forwarded</span>
+        <h3>Fale conosco</h3>
+        <p>Telefone: (12) 98234-5553<br>Email: jvnb.almeida@hotmail.com</p>
       </div>
       <div class="method-card">
-        <span class="num">03</span>
-        <h3>Consectetur</h3>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>
+        <span class="material-icons">schedule</span>
+        <h3>Horário de atendimento</h3>
+        <p>Segunda a sábado, das 09:00 às 17:00</p>
       </div>
     </div>
   </div>
@@ -829,59 +124,58 @@
   <div class="wrap" style="margin-bottom:80px;">
     <div class="section-head" style="margin-bottom:0;">
       <div>
-        <div class="eyebrow" style="margin-bottom:20px;">Lorem ipsum / 02</div>
-        <h2 class="section-title display">Lorem ipsum<br>dolor sit amet.</h2>
+        <div class="eyebrow" style="margin-bottom:20px;">Trabalhos / 02</div>
+        <h2 class="section-title display">Resultados que<br>viram identidade</h2>
       </div>
-      <p class="section-desc">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor.</p>
+      <p class="section-desc">Explore alguns dos trabalhos realizados pelo nosso estúdio.</p>
     </div>
   </div>
 
   <div class="programs-pin">
     <div class="programs-track">
       <div class="program-card">
-        <div class="tag">Lorem / 01</div>
-        <div class="pnum">01</div>
+        <div class="tag">Studio JVP Tattoo</div>
+        <div class="pnum"><img src="assets/img/trabalho-1.jpg" alt="trabalho1"></div>
         <div>
           <h3>Lorem Ipsum</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.</p>
+          <p><p>Arte desenvolvida com dedicação e cuidado em cada traço, valorizando expressão, estilo e personalidade.</p></p>
         </div>
-        <div class="meta-row"><span>Lorem · 45min</span><span>Dolor sit</span></div>
       </div>
+
       <div class="program-card">
-        <div class="tag">Lorem / 02</div>
-        <div class="pnum">02</div>
+        <div class="tag">Studio JVP Tattoo</div>
+        <div class="pnum"><img src="assets/img/trabalho-2.jpg" alt="trabalho1"></div>
         <div>
-          <h3>Dolor Sit</h3>
-          <p>Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.</p>
+          <h3>Lorem Ipsum</h3>
+          <p><p>Arte desenvolvida com dedicação e cuidado em cada traço, valorizando expressão, estilo e personalidade.</p></p>
         </div>
-        <div class="meta-row"><span>Lorem · 60min</span><span>Dolor sit</span></div>
       </div>
+
       <div class="program-card">
-        <div class="tag">Lorem / 03</div>
-        <div class="pnum">03</div>
+        <div class="tag">Studio JVP Tattoo</div>
+        <div class="pnum"><img src="assets/img/trabalho-3.jpg" alt="trabalho1"></div>
         <div>
-          <h3>Amet Consectetur</h3>
-          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>
+          <h3>Lorem Ipsum</h3>
+          <p><p>Arte desenvolvida com dedicação e cuidado em cada traço, valorizando expressão, estilo e personalidade.</p></p>
         </div>
-        <div class="meta-row"><span>Lorem · 50min</span><span>Dolor sit</span></div>
       </div>
+
       <div class="program-card">
-        <div class="tag">Lorem / 04</div>
-        <div class="pnum">04</div>
+        <div class="tag">Studio JVP Tattoo</div>
+        <div class="pnum"><img src="assets/img/trabalho-4.jpg" alt="trabalho1"></div>
         <div>
-          <h3>Adipiscing Elit</h3>
-          <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim.</p>
+          <h3>Lorem Ipsum</h3>
+          <p><p>Arte desenvolvida com dedicação e cuidado em cada traço, valorizando expressão, estilo e personalidade.</p></p>
         </div>
-        <div class="meta-row"><span>Lorem · 40min</span><span>Dolor sit</span></div>
       </div>
+
       <div class="program-card">
-        <div class="tag">Lorem / 05</div>
-        <div class="pnum">05</div>
+        <div class="tag">Studio JVP Tattoo</div>
+        <div class="pnum"><img src="assets/img/trabalho-2.jpg" alt="trabalho1"></div>
         <div>
-          <h3>Sed Do Eiusmod</h3>
-          <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit sed quia.</p>
+          <h3>Lorem Ipsum</h3>
+          <p><p>Arte desenvolvida com dedicação e cuidado em cada traço, valorizando expressão, estilo e personalidade.</p></p>
         </div>
-        <div class="meta-row"><span>Lorem · 55min</span><span>Dolor sit</span></div>
       </div>
     </div>
   </div>
@@ -1059,328 +353,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script>
-gsap.registerPlugin(ScrollTrigger);
-
-/* =========================================================
-   0. SETUP — cursor custom, noise, progress bar
-========================================================= */
-const isTouch = window.matchMedia('(pointer: coarse)').matches;
-const dot = document.querySelector('.cursor-dot');
-const ring = document.querySelector('.cursor-ring');
-
-if (!isTouch) {
-  window.addEventListener('mousemove', (e) => {
-    gsap.to(dot, { x: e.clientX, y: e.clientY, duration: 0.1 });
-    gsap.to(ring, { x: e.clientX, y: e.clientY, duration: 0.5, ease: 'power3.out' });
-  });
-} else {
-  dot.style.display = 'none';
-  ring.style.display = 'none';
-}
-
-/* progress bar tied to whole page scroll */
-gsap.to('.progress-bar', {
-  scaleX: 1,
-  ease: 'none',
-  scrollTrigger: {
-    trigger: document.body,
-    start: 'top top',
-    end: 'bottom bottom',
-    scrub: true
-  }
-});
-
-/* ===========================================================
-   1. HERO — staggered line reveal + parallax background word
-=========================================================== */
-gsap.set('.hero-title .line span', { yPercent: 110 });
-gsap.set('.hero-kicker, .hero-sub, .hero-actions, .hero-meta', { autoAlpha: 0, y: 24 });
-
-const heroTl = gsap.timeline({ delay: 0.2 });
-heroTl
-  .to('.hero-title .line span', {
-    yPercent: 0,
-    duration: 1.1,
-    ease: 'power4.out',
-    stagger: 0.12
-  })
-  .to('.hero-kicker', { autoAlpha: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.7')
-  .to('.hero-sub', { autoAlpha: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.5')
-  .to('.hero-actions', { autoAlpha: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.4')
-  .to('.hero-meta', { autoAlpha: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.3');
-
-/* parallax giant outline word behind hero on scroll */
-gsap.to('.hero-bg-text', {
-  yPercent: 30,
-  ease: 'none',
-  scrollTrigger: {
-    trigger: '.hero',
-    start: 'top top',
-    end: 'bottom top',
-    scrub: true
-  }
-});
-
-/* scroll cue bar drain loop */
-gsap.fromTo('.scroll-cue .bar::after', { yPercent: -100 }, {});
-gsap.to('.scroll-cue .bar', {
-  '--p': 1,
-});
-gsap.to('.scroll-cue .bar::after', {
-  yPercent: 100,
-  duration: 1.4,
-  repeat: -1,
-  ease: 'power1.inOut'
-});
-
-/* animated counters in hero */
-document.querySelectorAll('.hero-meta .stat-num').forEach((el) => {
-  const target = +el.dataset.count;
-  ScrollTrigger.create({
-    trigger: el,
-    start: 'top 90%',
-    once: true,
-    onEnter: () => {
-      gsap.to(el, {
-        innerText: target,
-        duration: 1.6,
-        ease: 'power2.out',
-        snap: { innerText: 1 },
-        onUpdate: function () { el.innerText = Math.floor(el.innerText); }
-      });
-    }
-  });
-});
-
-/* ===========================================================
-   2. MARQUEE — infinite horizontal loop
-=========================================================== */
-const track = document.querySelector('.marquee-track');
-track.innerHTML += track.innerHTML; // duplicate for seamless loop
-
-let marqueeTween = gsap.to(track, {
-  xPercent: -50,
-  ease: 'none',
-  duration: 22,
-  repeat: -1
-});
-
-/* speed up marquee while scrolling, based on scroll velocity */
-let lastScroll = window.scrollY;
-ScrollTrigger.create({
-  trigger: document.body,
-  start: 0,
-  end: 'max',
-  onUpdate: (self) => {
-    const velocity = self.getVelocity();
-    const speedFactor = gsap.utils.clamp(0.4, 4, 1 + Math.abs(velocity) / 2000);
-    marqueeTween.timeScale(speedFactor);
-  }
-});
-
-/* ===========================================================
-   3. METHOD SECTION — typewriter effect (real typing, not CSS)
-=========================================================== */
-const typewriterEl = document.getElementById('typewriter-text');
-const fullText = "Estamos localizados em São José dos Campos, interior de São Paulo pronto para atende-los!";
-
-ScrollTrigger.create({
-  trigger: '.typewriter-block',
-  start: 'top 70%',
-  once: true,
-  onEnter: () => {
-    let i = 0;
-    const speed = 16; // ms per character
-    function typeChar() {
-      if (i <= fullText.length) {
-        typewriterEl.textContent = fullText.slice(0, i);
-        i++;
-        setTimeout(typeChar, speed);
-      }
-    }
-    typeChar();
-  }
-});
-
-/* method cards stagger reveal */
-gsap.set('.method-card', { autoAlpha: 0, y: 50 });
-ScrollTrigger.batch('.method-card', {
-  start: 'top 85%',
-  onEnter: (batch) => gsap.to(batch, {
-    autoAlpha: 1, y: 0, duration: 0.8, ease: 'power3.out', stagger: 0.15
-  })
-});
-
-/* section title char-split reveal (used generically for .section-title) */
-document.querySelectorAll('.section-title').forEach((title) => {
-  const text = title.innerHTML;
-  // wrap each word in span, preserve <br>
-  const words = text.split(/(<br>)/).map(part => {
-    if (part === '<br>') return '<br>';
-    return part.split(' ').filter(Boolean).map(w => `<span class="word-rv" style="display:inline-block;overflow:hidden;"><span style="display:inline-block;">${w}&nbsp;</span></span>`).join('');
-  }).join('');
-  title.innerHTML = words;
-
-  gsap.set(title.querySelectorAll('.word-rv span'), { yPercent: 110 });
-  ScrollTrigger.create({
-    trigger: title,
-    start: 'top 85%',
-    once: true,
-    onEnter: () => {
-      gsap.to(title.querySelectorAll('.word-rv span'), {
-        yPercent: 0,
-        duration: 0.9,
-        ease: 'power4.out',
-        stagger: 0.05
-      });
-    }
-  });
-});
-
-/* ===========================================================
-   4. PROGRAMS — pinned horizontal scroll-jacking
-=========================================================== */
-const programsTrack = document.querySelector('.programs-track');
-
-function getScrollAmount() {
-  const trackWidth = programsTrack.scrollWidth;
-  return -(trackWidth - window.innerWidth + 64);
-}
-
-let horizontalTween = gsap.to(programsTrack, {
-  x: getScrollAmount,
-  ease: 'none',
-  scrollTrigger: {
-    trigger: '.programs-pin',
-    start: 'top top',
-    end: () => `+=${programsTrack.scrollWidth - window.innerWidth}`,
-    scrub: 1,
-    pin: true,
-    invalidateOnRefresh: true
-  }
-});
-
-/* subtle rotation + scale on each card as it crosses center */
-gsap.utils.toArray('.program-card').forEach((card) => {
-  gsap.fromTo(card, { scale: 0.9, autoAlpha: 0.4 }, {
-    scale: 1,
-    autoAlpha: 1,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: card,
-      containerAnimation: horizontalTween,
-      start: 'left 80%',
-      end: 'left 30%',
-      scrub: true
-    }
-  });
-});
-
-/* ===========================================================
-   5. COUNTERS — big number count-up on white section
-=========================================================== */
-document.querySelectorAll('.count-num').forEach((el) => {
-  const target = +el.dataset.count;
-  ScrollTrigger.create({
-    trigger: el,
-    start: 'top 85%',
-    once: true,
-    onEnter: () => {
-      gsap.to(el, {
-        innerText: target,
-        duration: 2,
-        ease: 'power2.out',
-        snap: { innerText: 1 },
-        onUpdate: function () { el.innerText = Math.floor(el.innerText).toLocaleString('pt-BR'); }
-      });
-    }
-  });
-});
-
-/* ===========================================================
-   6. EQUIPE — fill-on-hover rows + scroll reveal
-=========================================================== */
-gsap.set('.coach-row', { autoAlpha: 0, x: -40 });
-ScrollTrigger.batch('.coach-row', {
-  start: 'top 90%',
-  onEnter: (batch) => gsap.to(batch, {
-    autoAlpha: 1, x: 0, duration: 0.7, ease: 'power3.out', stagger: 0.12
-  })
-});
-
-document.querySelectorAll('.coach-row').forEach((row) => {
-  const fill = row.querySelector('.coach-fill');
-  const name = row.querySelector('.coach-name');
-  row.addEventListener('mouseenter', () => {
-    gsap.to(fill, { scaleY: 1, duration: 0.5, ease: 'power3.out' });
-    gsap.to(name, { x: 12, duration: 0.4, ease: 'power3.out' });
-  });
-  row.addEventListener('mouseleave', () => {
-    gsap.to(fill, { scaleY: 0, duration: 0.4, ease: 'power3.in', transformOrigin: 'top' });
-    gsap.to(name, { x: 0, duration: 0.4 });
-  });
-});
-
-/* ===========================================================
-   7. STATEMENT — word-by-word scroll-scrubbed highlight
-=========================================================== */
-const statementEl = document.getElementById('statement-text');
-const words = statementEl.textContent.trim().split(/\s+/);
-statementEl.innerHTML = words.map(w => `<span class="word">${w}</span>`).join(' ');
-
-gsap.to('.statement-text .word', {
-  color: '#f5f5f5',
-  stagger: 0.06,
-  ease: 'none',
-  scrollTrigger: {
-    trigger: '.statement',
-    start: 'top 70%',
-    end: 'bottom 60%',
-    scrub: true
-  }
-});
-
-/* ===========================================================
-   8. PRICING — staggered card reveal with skew
-=========================================================== */
-gsap.set('.price-card', { autoAlpha: 0, y: 60, skewY: 3 });
-ScrollTrigger.batch('.price-card', {
-  start: 'top 85%',
-  onEnter: (batch) => gsap.to(batch, {
-    autoAlpha: 1, y: 0, skewY: 0, duration: 0.9, ease: 'power4.out', stagger: 0.15
-  })
-});
-
-/* ===========================================================
-   9. CTA FINAL — line reveal identical pattern as hero, replayable
-=========================================================== */
-const ctaLine = document.querySelector('.cta-final .line span');
-gsap.set(ctaLine, { yPercent: 110 });
-ScrollTrigger.create({
-  trigger: '.cta-final',
-  start: 'top 75%',
-  once: true,
-  onEnter: () => {
-    gsap.to(ctaLine, { yPercent: 0, duration: 1, ease: 'power4.out' });
-  }
-});
-
-/* ===========================================================
-   10. GENERIC: fade/slide for eyebrow + section-desc across page
-=========================================================== */
-gsap.utils.toArray('.eyebrow, .section-desc').forEach((el) => {
-  gsap.set(el, { autoAlpha: 0, y: 16 });
-  ScrollTrigger.create({
-    trigger: el,
-    start: 'top 90%',
-    once: true,
-    onEnter: () => gsap.to(el, { autoAlpha: 1, y: 0, duration: 0.7, ease: 'power2.out' })
-  });
-});
-
-/* refresh ScrollTrigger after everything is laid out (fonts/images) */
-window.addEventListener('load', () => ScrollTrigger.refresh());
-</script>
+<script src="assets/js/gsap.js"></script>
 </body>
 </html>
