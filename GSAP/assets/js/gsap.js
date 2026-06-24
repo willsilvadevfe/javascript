@@ -225,71 +225,61 @@ if (programsTrack) {
   const getScrollAmount = () => -getScrollDistance();
 
   // Quanto de "scroll extra" (em px) o usuário vai rolar parado, vendo os cards
-  const HOLD_DURATION = 1500;
+ const HOLD_DURATION = 1500;
 
-  let horizontalTween = gsap.to(programsTrack, {
-    x: getScrollAmount,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '.programs-pin',
-      start: 'center center',
-      // Distância real do movimento + a "pausa" no final
-      end: () => `+=${getScrollDistance() + HOLD_DURATION}`,
-      scrub: 1,
-      pin: true,
-      invalidateOnRefresh: true,
-      // Garante que o movimento horizontal termine ANTES do fim do trigger,
-      // criando a sensação de "parar mostrando os cards"
-      animation: gsap.to(programsTrack, {
-        x: getScrollAmount,
-        ease: 'none'
-      })
-    }
-  });
-
-  gsap.utils.toArray('.program-card').forEach((card) => {
-    gsap.fromTo(
-      card,
-      { scale: 0.9, autoAlpha: 0.4 },
-      {
-        scale: 1,
-        autoAlpha: 1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: card,
-          containerAnimation: horizontalTween,
-          start: 'left 85%',
-          end: 'left center',
-          scrub: true
-        }
-      }
-    );
-  });
-}
-
-/* ===========================================================
-   6. COUNTERS
-=========================================================== */
-
-document.querySelectorAll('.count-num').forEach((el) => {
-  const target = +el.dataset.count;
-
-  ScrollTrigger.create({
-    trigger: el,
-    start: 'top 85%',
-    once: true,
-    onEnter: () => {
-      gsap.to(el, {
-        innerText: target,
-        duration: 2,
-        snap: { innerText: 1 },
-        onUpdate: function () {
-          el.innerText = Math.floor(el.innerText).toLocaleString('pt-BR');
-        }
-      });
-    }
-  });
+let horizontalTween = gsap.to(programsTrack, {
+  x: getScrollAmount,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".programs-pin",
+    start: "center center",
+    end: () => `+=${getScrollDistance() + HOLD_DURATION}`,
+    scrub: 1,
+    pin: true,
+    invalidateOnRefresh: true,
+    onUpdate: self => highlightCenterCard()
+  }
 });
+
+  const cards = gsap.utils.toArray(".program-card");
+
+function highlightCenterCard() {
+  const viewportCenter = window.innerWidth / 2;
+
+  let closestCard = null;
+  let closestDistance = Infinity;
+
+  cards.forEach(card => {
+    const rect = card.getBoundingClientRect();
+    const cardCenter = rect.left + rect.width / 2;
+
+    const distance = Math.abs(viewportCenter - cardCenter);
+
+    // reset padrão
+    gsap.to(card, {
+      scale: 0.92,
+      autoAlpha: 0.5,
+      duration: 0.3,
+      overwrite: true
+    });
+
+    if (distance < closestDistance) {
+      closestDistance = distance;
+      closestCard = card;
+    }
+  });
+
+  // destaque no mais próximo do centro
+  if (closestCard) {
+    gsap.to(closestCard, {
+      scale: 1.08,
+      autoAlpha: 1,
+      duration: 0.3,
+      overwrite: true
+    });
+  }
+}}
+
 
 /* ===========================================================
    7. EQUIPE
@@ -335,15 +325,23 @@ if (statementEl) {
     .map((w) => `<span class="word">${w}</span>`)
     .join(' ');
 
+  gsap.set('.statement-text .word', {
+    opacity: 0.25,
+    y: 12,
+  });
+
   gsap.to('.statement-text .word', {
+    opacity: 1,
+    y: 0,
     color: '#f5f5f5',
     stagger: 0.06,
+    ease: 'none',
     scrollTrigger: {
       trigger: '.statement',
       start: 'top 70%',
       end: 'bottom 60%',
-      scrub: true
-    }
+      scrub: true,
+    },
   });
 }
 
