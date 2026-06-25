@@ -218,73 +218,98 @@ document.querySelectorAll('.section-title').forEach((title) => {
 const programsTrack = document.querySelector('.programs-track');
 
 if (programsTrack) {
-  // Distância real que o track precisa percorrer para mostrar o último card
   const getScrollDistance = () =>
     programsTrack.scrollWidth - window.innerWidth + 64;
 
   const getScrollAmount = () => -getScrollDistance();
 
-  // Quanto de "scroll extra" (em px) o usuário vai rolar parado, vendo os cards
- const HOLD_DURATION = 1500;
-
-let horizontalTween = gsap.to(programsTrack, {
-  x: getScrollAmount,
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".programs-pin",
-    start: "center center",
-    end: () => `+=${getScrollDistance() + HOLD_DURATION}`,
-    scrub: 1,
-    pin: true,
-    invalidateOnRefresh: true,
-    onUpdate: self => highlightCenterCard()
-  }
-});
-
+  const HOLD_DURATION = 1500;
   const cards = gsap.utils.toArray(".program-card");
 
-function highlightCenterCard() {
-  const viewportCenter = window.innerWidth / 2;
+  let isHovering = false; // flag pra pausar o highlight automático
 
-  let closestCard = null;
-  let closestDistance = Infinity;
-
-  cards.forEach(card => {
-    const rect = card.getBoundingClientRect();
-    const cardCenter = rect.left + rect.width / 2;
-
-    const distance = Math.abs(viewportCenter - cardCenter);
-
-    // reset padrão
-    gsap.to(card, {
-      scale: 0.92,
-      autoAlpha: 0.5,
-      duration: 0.3,
-      overwrite: true
-    });
-
-    if (distance < closestDistance) {
-      closestDistance = distance;
-      closestCard = card;
+  let horizontalTween = gsap.to(programsTrack, {
+    x: getScrollAmount,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".programs-pin",
+      start: "center center",
+      end: () => `+=${getScrollDistance() + HOLD_DURATION}`,
+      scrub: 1,
+      pin: true,
+      anticipatePin: 1,
+      invalidateOnRefresh: true,
+      onUpdate: () => {
+        if (!isHovering) highlightCenterCard();
+      }
     }
   });
 
-  // destaque no mais próximo do centro
-  if (closestCard) {
-    gsap.to(closestCard, {
-      scale: 1.08,
-      autoAlpha: 1,
-      duration: 0.3,
-      overwrite: true
+  function highlightCenterCard() {
+    const viewportCenter = window.innerWidth / 2;
+
+    let closestCard = null;
+    let closestDistance = Infinity;
+
+    cards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      const cardCenter = rect.left + rect.width / 2;
+      const distance = Math.abs(viewportCenter - cardCenter);
+
+      gsap.to(card, {
+        scale: 0.92,
+        autoAlpha: 0.5,
+        duration: 0.3,
+        overwrite: "auto"
+      });
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestCard = card;
+      }
     });
+
+    if (closestCard) {
+      gsap.to(closestCard, {
+        scale: 1.08,
+        autoAlpha: 1,
+        duration: 0.3,
+        overwrite: "auto"
+      });
+    }
   }
-}}
+
+  // Hover individual — tem prioridade sobre o highlight do scroll
+  cards.forEach(card => {
+    card.addEventListener("mouseenter", () => {
+      isHovering = true;
+      gsap.to(cards, {
+        scale: 0.92,
+        autoAlpha: 0.5,
+        duration: 0.3,
+        overwrite: "auto"
+      });
+      gsap.to(card, {
+        scale: 1.12,
+        autoAlpha: 1,
+        duration: 0.3,
+        overwrite: "auto"
+      });
+    });
+
+    card.addEventListener("mouseleave", () => {
+      isHovering = false;
+      highlightCenterCard(); // retoma o destaque baseado na posição do scroll
+    });
+  });
+}
 
 
 /* ===========================================================
    7. EQUIPE
 =========================================================== */
 
+// Animação de entrada no Scroll
 gsap.set('.coach-row', { autoAlpha: 0, x: -40 });
 
 ScrollTrigger.batch('.coach-row', {
@@ -293,22 +318,60 @@ ScrollTrigger.batch('.coach-row', {
     gsap.to(batch, {
       autoAlpha: 1,
       x: 0,
-      stagger: 0.12
+      stagger: 0.12,
+      ease: "power2.out",
+      duration: 0.8
     })
 });
 
+// Animação de Hover com Revelação de Imagem
 document.querySelectorAll('.coach-row').forEach((row) => {
   const fill = row.querySelector('.coach-fill');
   const name = row.querySelector('.coach-name');
+  const imgWrapper = row.querySelector('.coach-img-wrapper'); // Puxando a nova imagem
+
+  // Seta a posição inicial da imagem (menor e levemente girada)
+  gsap.set(imgWrapper, { scale: 0.8, rotation: -5 });
 
   row.addEventListener('mouseenter', () => {
-    gsap.to(fill, { scaleY: 1 });
-    gsap.to(name, { x: 12 });
+    // Fundo branco
+    gsap.to(fill, { scaleY: 1, duration: 0.5, ease: "power3.out" });
+    // Move o texto
+    gsap.to(name, { x: 16, duration: 0.5, ease: "power3.out" });
+    
+    // Revela a imagem (pop-up orgânico)
+    if(window.innerWidth > 1024) { // Só anima se não for mobile
+      gsap.to(imgWrapper, { 
+        autoAlpha: 1, 
+        scale: 1, 
+        rotation: 0,
+        x: -20,
+        duration: 0.6, 
+        ease: "back.out(1.5)" // Efeito de "elástico" suave
+      });
+    }
   });
 
   row.addEventListener('mouseleave', () => {
-    gsap.to(fill, { scaleY: 0, transformOrigin: 'top' });
-    gsap.to(name, { x: 0 });
+    // Recolhe o fundo branco pelo topo
+    gsap.to(fill, { scaleY: 0, transformOrigin: 'top', duration: 0.5, ease: "power3.inOut" });
+    // Volta o texto
+    gsap.to(name, { x: 0, duration: 0.5, ease: "power3.out" });
+    
+    // Oculta a imagem
+    if(window.innerWidth > 1024) {
+      gsap.to(imgWrapper, { 
+        autoAlpha: 0, 
+        scale: 0.8, 
+        rotation: 5,
+        x: 0,
+        duration: 0.4, 
+        ease: "power2.in" 
+      });
+    }
+
+    // Reseta o ponto de origem do fundo branco para a próxima interação
+    gsap.set(fill, { transformOrigin: 'bottom', delay: 0.5 });
   });
 });
 
