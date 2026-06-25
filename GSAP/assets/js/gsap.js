@@ -379,32 +379,52 @@ document.querySelectorAll('.coach-row').forEach((row) => {
    8. STATEMENT
 =========================================================== */
 
-const statementEl = document.getElementById('statement-text');
+const statementSection = document.querySelector(".statement");
 
-if (statementEl) {
-  const words = statementEl.textContent.trim().split(/\s+/);
+if (statementSection) {
+  const statementText = document.getElementById("statement-text");
 
-  statementEl.innerHTML = words
+  const words = statementText.textContent.trim().split(" ");
+
+  statementText.innerHTML = words
     .map((w) => `<span class="word">${w}</span>`)
-    .join(' ');
+    .join(" ");
 
-  gsap.set('.statement-text .word', {
-    opacity: 0.25,
-    y: 12,
+  gsap.set(".statement .word", {
+    opacity: 0,
+    y: 20,
+    filter: "blur(6px)"
   });
 
-  gsap.to('.statement-text .word', {
-    opacity: 1,
-    y: 0,
-    color: '#f5f5f5',
-    stagger: 0.06,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '.statement',
-      start: 'top 70%',
-      end: 'bottom 60%',
-      scrub: true,
-    },
+  gsap.set(".statement .wrap", {
+    opacity: 0,
+    scale: 0.96
+  });
+
+  ScrollTrigger.create({
+    trigger: statementSection,
+    start: "top 80%", // só ativa quando entra na viewport
+    once: true,       // roda apenas uma vez
+    invalidateOnRefresh: true,
+
+    onEnter: () => {
+      gsap.to(".statement .wrap", {
+        opacity: 1,
+        scale: 1,
+        duration: 0.9,
+        ease: "power3.out"
+      });
+
+      gsap.to(".statement .word", {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        duration: 0.8,
+        stagger: 0.03,
+        ease: "power3.out",
+        delay: 0.15
+      });
+    }
   });
 }
 

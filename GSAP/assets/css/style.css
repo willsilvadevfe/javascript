@@ -646,6 +646,7 @@
 }
 .statement-text{
   font-family:var(--ff-display);
+  color: var(--black-soft);
   font-size:clamp(32px,6.4vw,90px);
   line-height:1.05;
   text-transform:uppercase;
