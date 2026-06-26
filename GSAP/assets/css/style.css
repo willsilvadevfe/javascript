@@ -316,6 +316,8 @@
     background:var(--white);
   }
 
+
+
   /* ---------- MARQUEE GSAP ---------- */
   .marquee-section{
     border-top:1px solid var(--line);
